@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart page</title>
+    <link rel="stylesheet" href="./style/page-cart.css">
+</head>
+<body>
+    <section class="cart">
+        <div class="cart__prouducts">
+            <div class="cart__prouducts__head">
+                <p>Products in Cart</p>
+                <div class="cart__prouducts__head__items">
+                    <p>ITEMS: </p>
+                    <input type="text" id="inp__cart__items" value="1">
+                </div>
+                <div class="cart__prouducts__head__pages">
+                    <p>PAGE:</p>
+                    <button class="btn_pages_left">&LT</button>
+                    <input type="text" id="inp__cart__pages" value="1">
+                    <button class="btn_pages_right">&GT</button>
+                </div>
+            </div>
+            <div class="cart__prouducts__list">
+                <div class="cart__prouducts__list__n">1</div>
+                <div class="cart__prouducts__list__photo">Image Here</div>
+                <div class="cart__prouducts__list__detail">
+                    <div class="cart__prouducts__list__detail__title">Iphone</div>
+                    <div class="cart__prouducts__list__detail__dscr">Description</div>
+                    <div class="cart__prouducts__list__detail__rd">
+                        <div class="cart__prouducts__list__detail__rating">Rating: </div>
+                        <div class="cart__prouducts__list__detail__discount">Discount: </div>
+                    </div>
+                </div>
+                <div class="cart__prouducts__list__count">
+                    <div class="cart__prouducts__list__count__stock">
+                        <p>Stock: </p>
+                        <div class="cart__prouducts__list__count__stock__n">341</div>
+                    </div>
+                    <div class="cart__prouducts__list__count__items">
+                        <button class="btn_items_left">-</button>
+                        <div class="cart__prouducts__list__count__items__sum">15</div>
+                        <button class="btn_items_right">+</button>
+                    </div>
+                    <div class="cart__prouducts__list__count__sum">
+                        &euro;17000.55
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart__summary">
+            <div class="cart__summary__head">Summary</div>
+            <div class="cart__summary__list">
+                <div class="cart__summary__list__count">
+                    <p>Products: </p>
+                    <div class="cart__summary__list__count__items">19</div>
+                </div>
+                <div class="cart__summary__list__total">
+                    <p>Total: </p>
+                    <div class="cart__summary__list__total__sum">
+                        &euro;17000.55
+                    </div>
+                </div>
+                <input type="text" value="PROMO HERE">
+                <p>Promo for test: 'RSSchool'</p>
+                <button class="btn__buynow">BUY NOW</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
