@@ -1,4 +1,44 @@
-p {
-  font-size: 111px;
-  text-align: center;
+.header {
+  min-height: 10vh;
+  width: 100%;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header__wrapper {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 250px;
+  height: 42px;
+}
+
+.logo__image {
+  max-width: 100%;
+}
+
+.navbar__items {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar__link {
+  color: var(--fonts);
+  font-size: 24px;
+}
+
+.cart {
+  width: 42px;
+}
+
+.cart__image {
+  max-width: 100%;
 }
