@@ -1,12 +1,12 @@
-import products from './products.js'
+import myJson from './products.json' assert {type: 'json'};
 
 // CREATE products item from products.js
 
 const newProduct = function () {
+  const products = myJson.products;
   for (let i = 0; i < products.length; i++) {
     const element = products[i];
     const productContainer = document.querySelector('.products-container')
-    // const productCategory = document.querySelector('.products-container')
 
     const newProduct = document.createElement('div');
     newProduct.className = 'product-item';
@@ -21,7 +21,6 @@ const newProduct = function () {
     productItemInfo.append(productName)
 
     const productPrice = document.createElement('p');
-    // productPrice.innerHTML = "Price: ";
     productPrice.className = 'product-price';
     productItemInfo.append(productPrice)
 
@@ -48,9 +47,8 @@ const newProduct = function () {
     productButtons.append(buttonBuy)
 
     productName.innerHTML = element.name;
-    productCost.innerHTML = element.price;
-    productItemImage.src = element.image
-  
+    productCost.innerHTML = element.price + ' $';
+    productItemImage.src = element.thumbnail;
   }
 }
 newProduct()
