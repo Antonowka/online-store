@@ -151,8 +151,9 @@
 .product-buttons,
 .reset-total {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 10px;
+  gap: 20px;
 }
 
 .view-mode {
