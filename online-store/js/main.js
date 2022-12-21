@@ -1,8 +1,10 @@
-import myJson from './products.json' assert {type: 'json'};
+import myJson from './products.json' assert {
+  type: 'json'
+};
 
 // CREATE products item from products.js
 
-const newProduct = function () {
+function creatProducts() {
   const products = myJson.products;
   for (let i = 0; i < products.length; i++) {
     const element = products[i];
@@ -28,9 +30,13 @@ const newProduct = function () {
     productCost.className = 'product-cost'
     productPrice.append(productCost)
 
+    const productItemImageContainer = document.createElement('div');
+    productItemImageContainer.className = 'product-item__image_container';
+    newProduct.append(productItemImageContainer)
+
     const productItemImage = document.createElement('img');
     productItemImage.className = 'product-item__image';
-    newProduct.append(productItemImage)
+    productItemImageContainer.append(productItemImage)
 
     const productButtons = document.createElement('div');
     productButtons.className = 'product-buttons';
@@ -46,29 +52,31 @@ const newProduct = function () {
     buttonBuy.className = 'button';
     productButtons.append(buttonBuy)
 
+    // const category = element.category
+    // if (category === 'smartphones') {
+    //   productName.innerHTML = element.name;
+    //   productCost.innerHTML = element.price + ' $';
+    //   productItemImage.src = element.thumbnail;
+    // } else if (category === 'laptops') {
+    //   productName.innerHTML = element.name;
+    //   productCost.innerHTML = element.price + ' $';
+    //   productItemImage.src = element.thumbnail;
+    // } else {
+    //   newProduct.style.display = 'none';
+    // }
     productName.innerHTML = element.name;
     productCost.innerHTML = element.price + ' $';
     productItemImage.src = element.thumbnail;
   }
 }
-newProduct()
+creatProducts()
 
 
 
 // const categoryy = function () {
 //   const category = element.category
-//   if (category === 'smartphonez') {
-//     productName.innerHTML = element.name;
-//     productCost.innerHTML = element.price;
-//     productItemImage.src = element.image
-//   } else if (category === 'smartphonev'){
-//     productName.innerHTML = element.name;
-//     productCost.innerHTML = element.price;
-//     productItemImage.src = element.image
-//   } else {
-//     newProduct.style.display = 'none';
-//   }
-  
+
+
 // }
 // categoryy()
 // function liberty() {
