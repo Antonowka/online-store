@@ -4,7 +4,7 @@ import myJson from './products.json' assert {
 
 // CREATE products item from products.js
 
-function creatProducts() {
+function createProducts() {
   const products = myJson.products;
   for (let i = 0; i < products.length; i++) {
     const element = products[i];
@@ -34,9 +34,13 @@ function creatProducts() {
     productItemImageContainer.className = 'product-item__image_container';
     newProduct.append(productItemImageContainer)
 
+    const productItemImageLink = document.createElement('a');
+    productItemImageLink.href = `#item-${i+1}`;
+    productItemImageContainer.append(productItemImageLink);
+
     const productItemImage = document.createElement('img');
     productItemImage.className = 'product-item__image';
-    productItemImageContainer.append(productItemImage)
+    productItemImageLink.append(productItemImage);
 
     const productButtons = document.createElement('div');
     productButtons.className = 'product-buttons';
@@ -69,7 +73,7 @@ function creatProducts() {
     productItemImage.src = element.thumbnail;
   }
 }
-creatProducts()
+createProducts()
 
 
 
@@ -86,3 +90,5 @@ creatProducts()
 //     element.category === 'smartphone'
 //   }
 // }
+
+export default createProducts

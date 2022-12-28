@@ -3,3 +3,7 @@
 @import url(./header.css);
 @import url(./main.css);
 @import url(./footer.css);
+@import url(./page-404.css);
+@import url(./page-cart.css);
+@import url(./page-detail.css);
+@import url(./purchase-modal.css);
