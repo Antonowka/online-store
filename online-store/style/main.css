@@ -25,6 +25,10 @@
   height: 100px;
 }
 
+.input-search {
+  margin-top: 20px;
+}
+
 .filter-name {
   font-size: 24px;
   padding: 10px 0;
@@ -247,4 +251,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hide {
+  display: none;
 }

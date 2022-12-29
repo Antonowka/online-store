@@ -1,94 +1,59 @@
-import myJson from './products.json' assert {
-  type: 'json'
-};
-
 // CREATE products item from products.js
 
 function createProducts() {
-  const products = myJson.products;
-  for (let i = 0; i < products.length; i++) {
-    const element = products[i];
-    const productContainer = document.querySelector('.products-container')
+  const userCardTemplate = document.querySelector("[data-user-template]")
+  const userCardContainer = document.querySelector("[data-user-cards-container]")
+  const searchInput = document.querySelector("[data-search]")
 
-    const newProduct = document.createElement('div');
-    newProduct.className = 'product-item';
-    productContainer.append(newProduct)
+  let products = []
 
-    const productItemInfo = document.createElement('div');
-    productItemInfo.className = 'product-item__info'
-    newProduct.append(productItemInfo)
+  searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase()
+    products.forEach(product => {
+      const isVisible = product.name.toLowerCase().includes(value)
+      product.element.classList.toggle("hide", !isVisible)
+    })
+  })
 
-    const productName = document.createElement('h3');
-    productName.className = 'product-name';
-    productItemInfo.append(productName)
+  const checkboxes = document.querySelectorAll('.filter-input')
 
-    const productPrice = document.createElement('p');
-    productPrice.className = 'product-price';
-    productItemInfo.append(productPrice)
+  fetch('../js/products.json')
+    .then(res => res.json())
+    .then(data => {
+      products = data.map(product => {
+        const card = userCardTemplate.content.cloneNode(true).children[0]
+        const info = card.querySelector("[data-name]")
+        const cost = card.querySelector("[data-cost]")
+        const src = card.querySelector("[data-src]")
+        const href = card.querySelector("[data-href]")
+        info.textContent = product.name
+        cost.innerHTML = product.price + ' $';
+        src.src = product.thumbnail;
+        href.href = `#item-${product.id}`;
+        userCardContainer.append(card)
 
-    const productCost = document.createElement('span');
-    productCost.className = 'product-cost'
-    productPrice.append(productCost)
+        for (let i = 0; i < checkboxes.length; i++) {
+          const checkbox = checkboxes[i];
+          checkbox.addEventListener('click', sortCheckbox)
 
-    const productItemImageContainer = document.createElement('div');
-    productItemImageContainer.className = 'product-item__image_container';
-    newProduct.append(productItemImageContainer)
-
-    const productItemImageLink = document.createElement('a');
-    productItemImageLink.href = `#item-${i+1}`;
-    productItemImageContainer.append(productItemImageLink);
-
-    const productItemImage = document.createElement('img');
-    productItemImage.className = 'product-item__image';
-    productItemImageLink.append(productItemImage);
-
-    const productButtons = document.createElement('div');
-    productButtons.className = 'product-buttons';
-    newProduct.append(productButtons)
-
-    const buttonAdd = document.createElement('button');
-    buttonAdd.innerHTML = "add to cart";
-    buttonAdd.className = 'button';
-    productButtons.append(buttonAdd)
-
-    const buttonBuy = document.createElement('button');
-    buttonBuy.innerHTML = "by now";
-    buttonBuy.className = 'button';
-    productButtons.append(buttonBuy)
-
-    // const category = element.category
-    // if (category === 'smartphones') {
-    //   productName.innerHTML = element.name;
-    //   productCost.innerHTML = element.price + ' $';
-    //   productItemImage.src = element.thumbnail;
-    // } else if (category === 'laptops') {
-    //   productName.innerHTML = element.name;
-    //   productCost.innerHTML = element.price + ' $';
-    //   productItemImage.src = element.thumbnail;
-    // } else {
-    //   newProduct.style.display = 'none';
-    // }
-    productName.innerHTML = element.name;
-    productCost.innerHTML = element.price + ' $';
-    productItemImage.src = element.thumbnail;
-  }
+          function sortCheckbox() {
+            if (checkbox.value === product.category || checkbox.value === product.brand) {
+              info.textContent = product.name
+              cost.innerHTML = product.price + ' $';
+              src.src = product.thumbnail
+            } else if (checkbox.checked !== true) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        }
+        return {
+          name: product.name,
+          element: card
+        }
+      })
+    })
 }
-createProducts()
-
-
-
-// const categoryy = function () {
-//   const category = element.category
-
-
-// }
-// categoryy()
-// function liberty() {
-//   const asd = document.getElementById('category-0')
-//   console.log(asd);
-//   if (asd === true) {
-//     element.category === 'smartphone'
-//   }
-// }
 
 export default createProducts
