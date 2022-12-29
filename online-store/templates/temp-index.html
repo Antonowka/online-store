@@ -12,48 +12,51 @@
     <div class="store-page__wrapper">
       <!-- FILTERS -->
       <div class="filters-container">
+        <div class="input-search">
+          <input type="search" placeholder="Search product" data-search>
+        </div>
         <!-- Category -->
         <h3 class="filter-name">Category</h3>
         <div class="filter-category">
           <div class="filter-item">
-            <input type="checkbox" id="category-0">
-            <label for="category-0">category-0</label>
+            <input class="filter-input" type="checkbox" id="smartphones" value="smartphones">
+            <label for="smartphones">Smartphones</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="category-1">
-            <label for="category-1">category-1</label>
+            <input class="filter-input" type="checkbox" id="laptops" value="laptops" >
+            <label for="laptops">Laptops</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="category-2">
-            <label for="category-2">category-2</label>
+            <input class="filter-input" type="checkbox" id="fragrances" value="fragrances">
+            <label for="fragrances">Fragrances</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="category-3">
-            <label for="category-3">category-3</label>
+            <input class="filter-input" type="checkbox" id="skincare"  value="skincare">
+            <label for="skincare">Skincare</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="category-4">
-            <label for="category-4">category-4</label>
+            <input class="filter-input" type="checkbox" id="groceries" value="groceries">
+            <label for="groceries">Groceries</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="category-5">
-            <label for="category-5">category-5</label>
+            <input class="filter-input" type="checkbox" id="home-decoration" value="home-decoration">
+            <label for="home-decoration">Home decoration</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="category-6">
-            <label for="category-6">category-6</label>
+            <input class="filter-input" type="checkbox" id="furniture" value="furniture">
+            <label for="furniture">Furniture</label>
           </div>
         </div>
         <!-- Brand -->
         <h3 class="filter-name">Brand</h3>
-        <div  class="filter-brand">
+        <div class="filter-brand">
           <div class="filter-item">
-            <input type="checkbox" id="brand-0">
-            <label for="brand-0">brand-0</label>
+            <input class="filter-input" type="checkbox" id="apple" value="Apple">
+            <label for="apple">Apple</label>
           </div>
           <div class="filter-item">
-            <input type="checkbox" id="brand-1">
-            <label for="brand-1">brand-1</label>
+            <input class="filter-input" type="checkbox" id="samsung" value="Samsung">
+            <label for="samsung">Samsung</label>
           </div>
           <div class="filter-item">
             <input type="checkbox" id="brand-2">
@@ -109,9 +112,6 @@
               <option value="name-za">name z-a</option>
             </select>
           </div>
-          <div class="">
-            <input type="search" placeholder="Search product" class="">
-          </div>
           <div class="view-mode">
             <div class="small-view">
               <!-- <img src="" alt="small-view"> -->
@@ -134,6 +134,26 @@
         </div>
         <div class="product-list">
           <div class="products-container"></div>
+          <div class="products-container" data-user-cards-container></div>
+          <template data-user-template>
+            <div class="product-item">
+              <div class="product-item__info">
+                <h3 class="product-name" data-name></h3>
+                <p class="product-price">
+                  <span class="product-cost" data-cost></span>
+                </p>
+              </div>
+              <div class="product-item__image_container">
+                <a href="" data-href>
+                  <img class="product-item__image" src="" data-src>
+                </a>
+              </div>
+              <div class="product-buttons">
+                <button class="button">add to cart</button>
+                <button class="button">by now</button>
+              </div>
+            </div>
+          </template>
         </div>
       </div>
     </div>

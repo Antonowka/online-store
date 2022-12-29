@@ -2,7 +2,7 @@ import myJson from './products.json' assert {
   type: 'json'
 };
 
-const products = myJson.products;
+const products = myJson;
 
 function fillDetailPage() {
   const productId = parseInt(document.location.hash.slice(6), 10);

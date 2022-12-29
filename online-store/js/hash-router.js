@@ -7,8 +7,7 @@ import myJson from './products.json' assert {
   type: 'json'
 };
 
-const products = myJson.products;
-
+const products = myJson;
 const pageTitle = "Online Store";
 
 const items = {}
