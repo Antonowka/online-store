@@ -32,13 +32,28 @@ function fillDetailPage() {
   document.querySelector('.detail__main__price').append(`${productPrice} $`);
 
   const productThumb = products[productId-1].thumbnail;
-  document.querySelector('.detail__main__photo__big').style.backgroundImage = `url('${productThumb}')`;
+  const bigImg = new Image();
+  bigImg.id = "img__big";
+  bigImg.src = productThumb;
+  bigImg.alt = "big img";
+  document.querySelector('.detail__main__photo__big').appendChild(bigImg);
 
   for (let i = 0; i < products[productId-1].images.length; i++) {
     const newSmallPhoto = document.createElement('div');
     newSmallPhoto.className = 'detail__main__photo__carousel__item';
-    newSmallPhoto.style.backgroundImage = `url('${products[productId-1].images[i]}')`;
+    const smallImg = new Image();
+    smallImg.src = `${products[productId-1].images[i]}`;
+    smallImg.alt = "small img";
+    smallImg.className = "img__small";
+    newSmallPhoto.appendChild(smallImg)
     document.querySelector('.detail__main__photo__carousel').append(newSmallPhoto);
+  }
+
+  for (let i = 0; i < products[productId-1].images.length; i++) {
+    document.querySelectorAll('.img__small')[i].addEventListener('click', function (e) {
+      let expandImg = document.getElementById("img__big");
+      expandImg.src = e.currentTarget.src;
+    });
   }
 }
 
