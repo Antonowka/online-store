@@ -75,6 +75,7 @@ ul.breadcrumb__ul li a:hover {
     background-color: #cc6880;
     background-size: cover;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .detail__main__photo__big {
@@ -85,6 +86,14 @@ ul.breadcrumb__ul li a:hover {
     border-radius: 10px;
     background-color: #cc6880;
     background-size: cover;
+    overflow: hidden;
+}
+
+.detail__main__photo__big > img,
+.detail__main__photo__carousel__item > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .detail__main__text {
