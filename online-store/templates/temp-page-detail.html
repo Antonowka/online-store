@@ -1,42 +1,55 @@
-<section class="breadcrumb">
-  <ul class="breadcrumb__ul">
-    <li><a href="#">Главная</a></li>
-    <li><a href="#">Картины</a></li>
-    <li><a href="#">Лето 15</a></li>
-    <li>Италия</li>
-  </ul>
+<section class="page">
+  <div class="container">
+    <div class="section-center">
+      <ul class="breadcrumb__ul">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">--product-name--</a></li>
+      </ul>
+    </div>
+  </div>
+
 </section>
 <section class="detail">
-  <div class="detail__title"></div>
   <div class="detail__main">
     <div class="detail__main__photo">
-      <div class="detail__main__photo__carousel"></div>
       <div class="detail__main__photo__big"></div>
+      <div class="detail__main__photo__carousel"></div>
     </div>
     <div class="detail__main__text">
-      <div class="detail__main__dscr detail__text__item">
-        <p>Description: </p>
+      <div class="detail__title"></div>
+      <div class="detail__main__wrapper">
+        <div class="detail__text__item">
+          <p class="detail__main__rating">Rating: </p>
+          <img class="star" src="../assets/icons/star.png" alt="">
+        </div>
+        <div class="detail__main__stock detail__text__item">
+          <p>In stock:</p>
+        </div>
+        <div class="detail__main__price detail__text__item">
+          <p>Price:</p>
+        </div>
       </div>
+      <div class="line"></div>
+      <div class="detail__main__dscr">
+      </div>
+      <div class="line"></div>
+      <div class="detail__main__wrapper">
+        <div class="detail__main__brand detail__text__item">
+          <p>Brand: </p>
+        </div>
+        <div class="detail__main__category detail__text__item">
+          <p>Category: </p>
+        </div>
+      </div>
+      <div class="line"></div>
       <div class="detail__main__discount detail__text__item">
         <p>Discount: </p>
       </div>
-      <div class="detail__main__rating detail__text__item">
-        <p>Rating: </p>
+      <div class="product-buttons__detail">
+        <button class="button button__buy__now">BUY NOW</button>
+        <button class="button button__add">ADD TO CART</button>
       </div>
-      <div class="detail__main__stock detail__text__item">
-        <p>Stock: </p>
-      </div>
-      <div class="detail__main__brand detail__text__item">
-        <p>Brand: </p>
-      </div>
-      <div class="detail__main__category detail__text__item">
-        <p>Category: </p>
-      </div>
-      <div class="detail__main__price detail__text__item">
-        <p>Price: </p>
-      </div>
-      <button class="btn__add">ADD TO CART</button>
-      <button class="btn__buynow">BUY NOW</button>
     </div>
   </div>
 </section>
