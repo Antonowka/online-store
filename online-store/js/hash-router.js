@@ -1,6 +1,7 @@
 // <<<---- СЮДА ИМПОРТИМ НАШИ ФАЙЛЫ СКРИПТЫ
 import createProducts from './main.js'
 import fillDetailPage from './detail.js'
+import fillCartPage from './cart.js'
 // ---->>>
 
 import myJson from './products.json' assert {
@@ -59,6 +60,10 @@ const locationHandler = async () => {
 
 	if (location.startsWith("item")) {
 		fillDetailPage();
+	}
+
+	if (location === "cart") {
+		fillCartPage();
 	}
 	// ---->>>
 	document.title = route.title;

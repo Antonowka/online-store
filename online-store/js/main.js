@@ -26,11 +26,15 @@ function createProducts() {
         const cost = card.querySelector("[data-cost]")
         const src = card.querySelector("[data-src]")
         const href = card.querySelector("[data-href]")
+        const btn_add = card.querySelector("[data-btn-add]")
+        const btn_buy_now = card.querySelector("[data-btn-buy-now]")
         info.textContent = product.name
         cost.innerHTML = product.price + ' $';
         src.src = product.thumbnail;
         href.href = `#item-${product.id}`;
         userCardContainer.append(card)
+        btn_add.id = `btn-add-${product.id}`;
+        btn_buy_now.id = `btn-buy-now-${product.id}`;
 
         for (let i = 0; i < checkboxes.length; i++) {
           const checkbox = checkboxes[i];
@@ -53,6 +57,44 @@ function createProducts() {
           element: card
         }
       })
+
+      // <<<--- Добавление товара в корзину
+      let cartProducts = [];
+
+      if (localStorage.getItem("RS-cart") === null) {
+        localStorage.setItem('RS-cart', JSON.stringify([]));
+      }
+
+      cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
+
+      for (let i = 0; i < cartProducts.length; i++) {
+        document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'drop item';
+      }
+
+      for (let i = 0; i < products.length; i++) {
+        document.querySelectorAll('.button__add')[i].addEventListener('click', addToCart);
+      }
+
+      function addToCart(e) {
+
+        const item_id = parseInt(e.currentTarget.id.slice(8), 10);
+        if (document.getElementById(`btn-add-${item_id}`).innerHTML === "add to cart") {
+          document.getElementById(`btn-add-${item_id}`).innerHTML = "drop item";
+          cartProducts.push(
+            {
+              id: item_id,
+              count: 1,
+              price: data[item_id-1].price
+            }
+          )
+          localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
+        } else {
+          document.getElementById(`btn-add-${item_id}`).innerHTML = "add to cart";
+          cartProducts = cartProducts.filter(value => value.id != item_id)
+          localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
+        }
+      }
+      // Добавление товара в корзину --->>>
     })
 }
 
