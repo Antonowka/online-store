@@ -1,5 +1,4 @@
 .header {
-  min-height: 10vh;
   width: 100%;
 }
 
@@ -10,7 +9,7 @@
 }
 
 .header__wrapper {
-  height: 100px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,10 +34,16 @@
   font-size: 24px;
 }
 
+.cart__text {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
 .cart__link {
-  width: 42px;
+  display: flex;
+  align-items: center;
 }
 
 .cart__image {
-  max-width: 100%;
+  width: 30px;
 }
