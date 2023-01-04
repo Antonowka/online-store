@@ -82,7 +82,7 @@ function createProducts() {
       cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
 
       for (let i = 0; i < cartProducts.length; i++) {
-        document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'drop item';
+        document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'Drob item';
       }
 
       for (let i = 0; i < products.length; i++) {
@@ -92,8 +92,8 @@ function createProducts() {
       function addToCart(e) {
 
         const item_id = parseInt(e.currentTarget.id.slice(8), 10);
-        if (document.getElementById(`btn-add-${item_id}`).innerHTML === "add to cart") {
-          document.getElementById(`btn-add-${item_id}`).innerHTML = "drop item";
+        if (document.getElementById(`btn-add-${item_id}`).innerHTML === "Add to cart") {
+          document.getElementById(`btn-add-${item_id}`).innerHTML = "Drop item";
           cartProducts.push(
             {
               id: item_id,
@@ -103,7 +103,7 @@ function createProducts() {
           )
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
         } else {
-          document.getElementById(`btn-add-${item_id}`).innerHTML = "add to cart";
+          document.getElementById(`btn-add-${item_id}`).innerHTML = "Add to cart";
           cartProducts = cartProducts.filter(value => value.id != item_id)
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
         }

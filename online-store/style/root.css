@@ -1,10 +1,15 @@
+html{
+  font-family: 'Roboto', sans-serif;
+}
+
 :root {
   --main: #fff;
-  --light-gray: #d7d6d6;
+  --light-gray: #E3E6E9;
   --gray: #8d8d92;
   --dark-gray: #5d5e60;
   --lavander: #d7cfdd;
-  --khaki: #859fb1;
+  --khaki: #7498b1;
+  --button: #758194;
   --fonts: #2c2c2c;
   --black: #222;
 }
