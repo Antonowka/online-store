@@ -9,9 +9,10 @@
 
 .cart__prouducts__head {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 80px;
   color: var(--khaki);
+  gap: 175px;
 }
 .cart__prouducts__head__items > p {
   width: 350px;
@@ -80,14 +81,14 @@
   text-align: center;
   box-sizing: border-box;
   border-radius: 100%;
-  margin: 0 5px 0 5px;
+  margin: 0 -140px 0 5px;
 }
 
 .cart__prouducts__list__photo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 350px;
+  width: 380px;
   gap: 10px;
   margin-bottom: 30px;
 }
@@ -194,13 +195,14 @@
 }
 
 .cart__prouducts__list__count__sum {
-  width: 65px;
+  width: 100px;
   text-align: center;
-  color: var(--gray);
+  color: var(--khaki);
 }
 
 .cart__prouducts__list__count__subtotal {
-  color: var(--khaki);
+  color: var(--gray);
+  width: 100px;
 }
 
 .cart__prouducts__info__wrapper {
