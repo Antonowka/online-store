@@ -29,9 +29,7 @@
   gap: 40px;
 }
 
-.navbar__link,
-.header__cost,
-.header__count {
+.navbar__link {
   color: var(--fonts);
   font-size: 24px;
 }
@@ -42,28 +40,10 @@
 }
 
 .cart__link {
-<<<<<<< HEAD
-  width: 42px;
-  position: relative;
-=======
   display: flex;
   align-items: center;
->>>>>>> 491765c (feat: new design page-detail)
 }
 
 .cart__image {
   width: 30px;
-}
-
-.header__count {
-  height: 30px;
-  width: 30px;
-  background-color: var(--main);
-  box-sizing: border-box;
-  border: 2px solid black;
-  border-radius: 100%;
-  text-align: center;
-  position: absolute;
-  top: 25px;
-  left: 25px;
 }
