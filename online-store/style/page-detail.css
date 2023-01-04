@@ -45,6 +45,7 @@ ul.breadcrumb__ul li a:hover {
   max-width: 1160px;
   justify-content: space-between;
   margin: 0 auto;
+  padding: 50px 0;
 }
 
 .detail__main__photo {
@@ -125,6 +126,7 @@ ul.breadcrumb__ul li a:hover {
 
 .star{
   max-height: 15px;
+  margin-left: 5px;
 }
 
 .detail__main__wrapper{
