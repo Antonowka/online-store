@@ -1,6 +1,20 @@
 // CREATE products item from products.js
 
 function createProducts() {
+
+  function updateHeader() {
+    let cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
+    let sumCount = 0;
+    let sumPrice = 0;
+    for (let i = 0; i < cartProducts.length; i++) {
+      sumCount += cartProducts[i].count;
+      sumPrice += cartProducts[i].count * cartProducts[i].price;
+    }
+    document.querySelector('.header__count').innerHTML = sumCount;
+    document.querySelector('.header__cost').innerHTML = `Cart total: ${sumPrice}$`;
+  }
+  updateHeader()
+
   const userCardTemplate = document.querySelector("[data-user-template]")
   const userCardContainer = document.querySelector("[data-user-cards-container]")
   const searchInput = document.querySelector("[data-search]")
@@ -93,6 +107,7 @@ function createProducts() {
           cartProducts = cartProducts.filter(value => value.id != item_id)
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
         }
+        updateHeader()
       }
       // Добавление товара в корзину --->>>
     })
