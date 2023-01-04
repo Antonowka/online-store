@@ -27,6 +27,7 @@ function createProducts() {
     products.forEach(product => {
       const isVisible = product.name.toLowerCase().includes(value)
       product.element.classList.toggle("hide", !isVisible)
+      console.log(product.brand);
     })
   })
 
@@ -51,10 +52,14 @@ function createProducts() {
         btn_add.id = `btn-add-${product.id}`;
         btn_buy_now.id = `btn-buy-now-${product.id}`;
 
+        btn_add.addEventListener('click', () => {
+          btn_add.classList.toggle('button-active')
+        })
+
         for (let i = 0; i < checkboxes.length; i++) {
           const checkbox = checkboxes[i];
           checkbox.addEventListener('click', sortCheckbox)
-
+          
           function sortCheckbox() {
             if (checkbox.value === product.category || checkbox.value === product.brand) {
               info.textContent = product.name

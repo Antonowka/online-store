@@ -283,6 +283,22 @@ body {
 .button:hover{
   color: var(--main);
   background-color: var(--dark-gray);
+  transform: scale(1.05);
+}
+
+.button:active{
+  color: var(--fonts);
+  background-color: var(--light-gray);
+  transform: scale(1);
+}
+
+.button-active{
+  color: var(--main);
+  background-color: var(--dark-gray);
+}
+.button-active:hover{
+  color: var(--fonts);
+  background-color: var(--light-gray);
 }
 
 .hide {
