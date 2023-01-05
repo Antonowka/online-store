@@ -55,7 +55,7 @@
           <!-- FILTERS -->
           <div class="filters-container">
             <div class="input-search">
-              <input type="search" placeholder="Search product" data-src>
+              <input type="search" placeholder="Search product" data-search id="search">
             </div>
             <!-- Category -->
             <h3 class="filter-name">Category</h3>
@@ -93,12 +93,12 @@
             <h3 class="filter-name">Brand</h3>
             <div class="filter-brand">
               <div class="filter-item">
-                <input type="checkbox" id="brand-0">
-                <label for="brand-0">brand-0</label>
+                <input class="filter-input" type="checkbox" id="apple" value="Apple">
+                <label for="apple">Apple</label>
               </div>
               <div class="filter-item">
-                <input type="checkbox" id="brand-1">
-                <label for="brand-1">brand-1</label>
+                <input class="filter-input" type="checkbox" id="samsung" value="Samsung">
+                <label for="samsung">Samsung</label>
               </div>
               <div class="filter-item">
                 <input type="checkbox" id="brand-2">
@@ -109,7 +109,7 @@
                 <label for="brand-3">brand-3</label>
               </div>
               <div class="filter-item">
-                <input type="checkbox" id="brand-4">
+                <input type="checkbox" class="brand-4" id="brand-4">
                 <label for="brand-4">brand-4</label>
               </div>
             </div>
@@ -147,11 +147,13 @@
               <div class="sort-print">
                 <h3 class="sort-title">sort by</h3>
                 <select class="sort-menu">
-                  <option value="sort-option" disabled="" selected="" class="sort-name">Sort options:</option>
-                  <option value="price-lowest">price lowest</option>
-                  <option value="price-highest">price highest</option>
-                  <option value="name-az">name a-z</option>
-                  <option value="name-za">name z-a</option>
+                  <option value="sort-option" disabled="" selected="">Sort options:</option>
+                  <option value="price-lowest" class="price-lowest">price lowest</option>
+                  <option value="price-highest" class="price-highest">price highest</option>
+                  <option value="rating-lowest" class="rating-lowest">rating lowest</option>
+                  <option value="rating-highest" class="rating-highest">rating highest</option>
+                  <option value="name-az" class="name-az">name a-z</option>
+                  <option value="name-za" class="name-za">name z-a</option>
                 </select>
               </div>
               <div class="view-mode">
@@ -205,6 +207,7 @@
   </footer>
 
   <script type="module" src="./js/hash-router.js"></script>
+  <!-- <script type="module" src="./js/sort.js"></script> -->
   <!-- <script type="module" src="./js/main.js"></script> -->
 </body>
 
