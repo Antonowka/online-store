@@ -154,7 +154,7 @@ body {
 }
 
 .product-item:hover .product-item__image{
-  opacity: 0.5;
+  opacity: 0.7;
   scale: 1.1;
 }
 
@@ -185,9 +185,6 @@ body {
 }
 
 .product-item__image_container {
-  background: var(--black);
-  height: 200px;
-  /* border-radius: 8px; */
   overflow: hidden;
 }
 
@@ -199,11 +196,6 @@ body {
   object-fit: cover;
   object-position: center;
   transition: 0.2s;
-}
-
-.product-item__image:hover {
-  opacity: 0.5;
-  scale: 1.1;
 }
 
 .product-buttons,
