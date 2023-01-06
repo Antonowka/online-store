@@ -55,6 +55,10 @@ function fillDetailPage() {
       expandImg.src = e.currentTarget.src;
     });
   }
+
+  let breadcrumbLastChild = document.querySelectorAll('.breadcrumb__ul > li')[2];
+  breadcrumbLastChild.innerHTML = `${myJson[productId-1].category}`;
+
 }
 
 export default fillDetailPage
