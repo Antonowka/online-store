@@ -15,6 +15,11 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    z-index: 500;
 }
 
 #modal__input__name,
@@ -32,7 +37,7 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 150px;
+    min-height: 150px;
     box-sizing: border-box;
     border: 4px solid black;
     border-radius: 20px;
@@ -69,4 +74,8 @@
     border-radius: 20px;
     background-color: #cc6880;
     cursor: pointer;
+}
+
+.modal__input::placeholder {
+    opacity: 0.4;
 }
