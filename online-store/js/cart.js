@@ -1,6 +1,7 @@
 import myJson from './products.json' assert {
   type: 'json'
 };
+import actionModal from './modal.js';
 
 function fillCartPage() {
   let cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
@@ -137,7 +138,7 @@ function fillCartPage() {
         container.id = i.id;
 
         if (i.id === item_id) {
-          if (document.getElementById(`items__sum-${i.id}`).innerHTML < myJson[item_id-1].stock) {
+          if (document.getElementById(`items__sum-${i.id}`).innerHTML <= myJson[item_id-1].stock) {
             container.count = --i.count;
           } else {
             container.count = i.count;
@@ -174,113 +175,7 @@ function fillCartPage() {
     document.querySelector('.header__cost').innerHTML = `Cart total: ${sumPrice}$`
   }
   updateCount()
-
-  const btn_buy_now = document.querySelector('.btn__buynow');
-  const modalWindow = document.querySelector('.purchase__modal');
-  const transparentModal = document.querySelector('.transparent__modal');
-  const btn_modal_confirm = document.querySelector('.btn__modal__confirm');
-  const modal_input_name = document.getElementById('modal__input__name');
-  const modal_input_phone = document.getElementById('modal__input__phone');
-  const modal_input_adress = document.getElementById('modal__input__adress');
-  const modal_input_email = document.getElementById('modal__input__email');
-  const modal_input_cardNum = document.getElementById('modal__input__cardNum');
-  const modal_input_cardDate = document.getElementById('modal__input__card__date');
-  const modal_input_cvv = document.getElementById('modal__input__card__CVV');
-
-  btn_buy_now.addEventListener('click', showModalWindow);
-  transparentModal.addEventListener('click', closeModalWindow);
-  btn_modal_confirm.addEventListener('click', validateForms);
-  modal_input_cardDate.addEventListener('input', validateDate);
-  modal_input_cardNum.addEventListener('input', validateCardNum);
-  modal_input_cvv.addEventListener('input', validateCVV);
-
-  function showModalWindow() {
-    transparentModal.style.display = 'block';
-    modalWindow.style.display = 'block';
-  }
-
-  function closeModalWindow() {
-    transparentModal.style.display = 'none';
-    modalWindow.style.display = 'none';
-  }
-
-  function validateForms() {
-    if (!modal_input_name.checkValidity() || modal_input_name.value == '') {
-      document.querySelector('.error__name').innerHTML = 'Error. The field must contain at least two words, each at least 3 characters long';
-    } else {
-      document.querySelector('.error__name').innerHTML = '';
-    }
-
-    if (!modal_input_phone.checkValidity() || modal_input_phone.value == '') {
-      document.querySelector('.error__phone').innerHTML = 'Error. The field must start with '+', contain only numbers and be at least 9 characters long';
-    } else {
-      document.querySelector('.error__phone').innerHTML = '';
-    }
-
-    if (!modal_input_adress.checkValidity() || modal_input_adress.value == '') {
-      document.querySelector('.error__adress').innerHTML = 'Error. The field must contain at least three words, each at least 5 characters long';
-    } else {
-      document.querySelector('.error__adress').innerHTML = '';
-    }
-
-    if (!modal_input_email.checkValidity() || modal_input_email.value == '') {
-      document.querySelector('.error__email').innerHTML = 'Error. The field must contain email';
-    } else {
-      document.querySelector('.error__email').innerHTML = '';
-    }
-
-    if (!modal_input_cardNum.checkValidity() || modal_input_cardNum.value == '') {
-      document.querySelector('.error__cardNum').innerHTML = 'Error. The number of digits entered must be 16';
-    } else {
-      document.querySelector('.error__cardNum').innerHTML = '';
-    }
-
-    if (!modal_input_cardDate.checkValidity() || modal_input_cardDate.value == '') {
-      document.querySelector('.error__date').innerHTML = 'Error. Invalid date';
-    } else {
-      document.querySelector('.error__date').innerHTML = '';
-    }
-
-    if (!modal_input_cvv.checkValidity() || modal_input_cvv.value == '') {
-      document.querySelector('.error__cvv').innerHTML = 'Error. Invalid CVV';
-    } else {
-      document.querySelector('.error__cvv').innerHTML = '';
-    }
-
-    let modal_error = document.querySelectorAll('.modal__error');
-    let join_error_text = '';
-
-    for (let i = 0; i < modal_error.length; i++) {
-      join_error_text += modal_error[i].innerHTML
-    }
-
-    if (join_error_text == '') {
-      // console.log('ВСЕ ПОЛЯ ЗАПОЛНЕНЫ ВЕРНО!!!')
-      modalWindow.innerHTML = 'Thank you for your purchase. After 3 seconds you will be redirected to the main page'
-      setTimeout(successPurchase, 3000);
-    }
-
-  }
-
-  function validateDate(e) {
-    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,2})/);
-    e.target.value = !x[2] ? x[1] : x[1] + '/' + x[2];
-  }
-
-  function validateCardNum(e) {
-    var y = e.target.value.replace(/\D/g, '').match(/(\d{0,16})/);
-    e.target.value = !y[2] ? y[1] : y[1];
-  }
-
-  function validateCVV(e) {
-    var z = e.target.value.replace(/\D/g, '').match(/(\d{0,3})/);
-    e.target.value = !z[2] ? z[1] : z[1];
-  }
-
-  function successPurchase() {
-    localStorage.setItem('RS-cart', JSON.stringify([]));
-    window.location.href = '';
-  }
+  actionModal()
 
 }
 
