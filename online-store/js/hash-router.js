@@ -43,6 +43,7 @@ Object.assign(routes, items)
 
 const locationHandler = async () => {
 	var location = window.location.hash.replace("#", "");
+	location = location.split('?')[0];
 
 	if (location.length == 0) {
 		location = "/";
