@@ -74,7 +74,7 @@ function createProducts() {
       cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
 
       for (let i = 0; i < cartProducts.length; i++) {
-        document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'Drob item';
+        document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'Drop item';
       }
 
       for (let i = 0; i < products.length; i++) {
