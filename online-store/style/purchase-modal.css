@@ -45,6 +45,7 @@
     padding-top: 25px;
     align-items: center;
     background-color: #6f87cd;
+    margin: 0 auto;
 }
 
 #modal__input__cardNum {
@@ -53,6 +54,8 @@
     box-sizing: border-box;
     border: 4px solid black;
     border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
 }
 
 #modal__input__card__date,

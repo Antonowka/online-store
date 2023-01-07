@@ -200,7 +200,7 @@
     <h2>Personal details</h2>
     <input type="text" id="modal__input__name" class="modal__input" placeholder="NAME LASTNAME" pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}">
     <div class="modal__error error__name"></div>
-    <input type="text" id="modal__input__phone" class="modal__input" placeholder="PHONE NUMBER" pattern="\+[0-9]{9,}">
+    <input type="text" id="modal__input__phone" class="modal__input" placeholder="PHONE NUMBER" pattern="[\+]\d{3}\s\d{3}[\-]\d{3}">
     <div class="modal__error error__phone"></div>
     <input type="text" id="modal__input__adress" class="modal__input" placeholder="DELIVERY ADRESS" pattern="[A-Za-z]{5,}\s[A-Za-z]{5,}\s[A-Za-z]{5,}">
     <div class="modal__error error__adress"></div>
@@ -208,7 +208,7 @@
     <div class="modal__error error__email"></div>
     <h2>Credit card details</h2>
     <div class="modal__card__wrapper">
-      <input type="text" id="modal__input__cardNum" class="modal__input" placeholder="CARD NUMBER" pattern="[0-9]{16}">
+      <input type="text" id="modal__input__cardNum" class="modal__input" placeholder="CARD NUMBER" pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}">
       <div class="modal__error error__cardNum"></div>
       <div class="modal__card__wrapper__validCVV">
         VALID: <input type="text" id="modal__input__card__date" class="modal__input" placeholder="DATE" pattern="^((0[1-9])|(1[0-2]))\/[2-9]([3-9])$">
