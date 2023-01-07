@@ -2,6 +2,9 @@ import myJson from './products.json' assert {
   type: 'json'
 };
 
+import updateHeader from './updateCart.js'
+import actionModal from './modal.js';
+
 const products = myJson;
 
 function fillDetailPage() {
@@ -59,6 +62,55 @@ function fillDetailPage() {
   let breadcrumbLastChild = document.querySelectorAll('.breadcrumb__ul > li')[2];
   breadcrumbLastChild.innerHTML = `${myJson[productId-1].category}`;
 
+  const btn_add = document.querySelector('.button__add');
+  btn_add.id = `btn-add-${productId}`;
+
+  let cartProducts = [];
+  cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
+
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id == parseInt(document.querySelector('.button__add').id.slice(8), 10)) {
+      document.querySelector('.button__add').innerHTML = 'Drop item';
+    }
+  }
+
+  document.querySelector('.button__add').addEventListener('click', addToCart);
+
+  function addToCart(e) {
+
+    const item_id = parseInt(e.currentTarget.id.slice(8), 10);
+    if (document.getElementById(`btn-add-${item_id}`).innerHTML === "Add to cart") {
+      document.getElementById(`btn-add-${item_id}`).innerHTML = "Drop item";
+      cartProducts.push({
+        id: item_id,
+        count: 1,
+        price: products[item_id - 1].price
+      })
+      localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
+    } else {
+      document.getElementById(`btn-add-${item_id}`).innerHTML = "Add to cart";
+      cartProducts = cartProducts.filter(value => value.id != item_id)
+      localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
+    }
+    updateHeader()
+  }
+
+  const btn_buy_now = document.querySelector('.button__buy__now');
+  btn_buy_now.id = `btn-byu-${productId}`;
+  btn_buy_now.addEventListener('click', buyNow)
+
+  function buyNow(e) {
+    const item_id = parseInt(e.currentTarget.id.slice(8), 10);
+    cartProducts = [];
+    cartProducts.push({
+      id: item_id,
+      count: 1,
+      price: products[item_id - 1].price
+    });
+    localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
+    updateHeader();
+
+  }
 }
 
 export default fillDetailPage
