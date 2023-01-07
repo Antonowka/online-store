@@ -30,7 +30,6 @@ function createProducts() {
         const href = card.querySelector("[data-href]")
         const rating = card.querySelector("[data-rating]")
         const btn_add = card.querySelector("[data-btn-add]")
-        const btn_buy_now = card.querySelector("[data-btn-buy-now]")
         info.textContent = product.name
         cost.innerHTML = product.price + ' $';
         src.src = product.thumbnail;
@@ -38,8 +37,6 @@ function createProducts() {
         href.href = `#item-${product.id}`;
         userCardContainer.append(card)
         btn_add.id = `btn-add-${product.id}`;
-        btn_buy_now.id = `btn-buy-now-${product.id}`;
-
         btn_add.addEventListener('click', () => {
           btn_add.classList.toggle('button-active')
         })
