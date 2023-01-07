@@ -28,11 +28,13 @@ function createProducts() {
         const cost = card.querySelector("[data-cost]")
         const src = card.querySelector("[data-src]")
         const href = card.querySelector("[data-href]")
+        const rating = card.querySelector("[data-rating]")
         const btn_add = card.querySelector("[data-btn-add]")
         const btn_buy_now = card.querySelector("[data-btn-buy-now]")
         info.textContent = product.name
         cost.innerHTML = product.price + ' $';
         src.src = product.thumbnail;
+        rating.innerHTML = product.rating;
         href.href = `#item-${product.id}`;
         userCardContainer.append(card)
         btn_add.id = `btn-add-${product.id}`;
