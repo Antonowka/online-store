@@ -1,5 +1,6 @@
 // CREATE products item from products.js
 import updateHeader from './updateCart.js'
+import viewmode from './view-mode.js'
 
 function createProducts() {
   const userCardTemplate = document.querySelector("[data-user-template]")
@@ -102,15 +103,4 @@ function createProducts() {
     })
 }
 
-function viewProducts(){
-  const viewBox = document.querySelector('.view-box')
-  const productContainer = document.querySelector('[data-user-cards-container]')
-
-  viewBox.addEventListener('click', () =>{
-    viewBox.classList.toggle('active')
-    productContainer.classList.toggle('active')
-  })
-}
-
-
-export {createProducts, viewProducts}
+export {createProducts, viewmode}
