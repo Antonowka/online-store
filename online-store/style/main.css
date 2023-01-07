@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   height: 100%;
   font-family: 'Roboto', sans-serif;
+  position: relative;
 }
 .main {
   flex: 1 0 auto;
@@ -295,4 +296,15 @@ body {
 
 .hide {
   display: none;
+}
+
+.transparent__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 14, 0.75);
+  z-index: 400;
 }

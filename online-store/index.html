@@ -194,6 +194,32 @@
         </div>
       </div>
   </main>
+
+  <div class="transparent__modal"></div>
+  <section class="purchase__modal">
+    <h2>Personal details</h2>
+    <input type="text" id="modal__input__name" class="modal__input" placeholder="NAME LASTNAME" pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}">
+    <div class="modal__error error__name"></div>
+    <input type="text" id="modal__input__phone" class="modal__input" placeholder="PHONE NUMBER" pattern="[\+]\d{3}\s\d{3}[\-]\d{3}">
+    <div class="modal__error error__phone"></div>
+    <input type="text" id="modal__input__adress" class="modal__input" placeholder="DELIVERY ADRESS" pattern="[A-Za-z]{5,}\s[A-Za-z]{5,}\s[A-Za-z]{5,}">
+    <div class="modal__error error__adress"></div>
+    <input type="text" id="modal__input__email" class="modal__input" placeholder="E-MAIL" type="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+    <div class="modal__error error__email"></div>
+    <h2>Credit card details</h2>
+    <div class="modal__card__wrapper">
+      <input type="text" id="modal__input__cardNum" class="modal__input" placeholder="CARD NUMBER" pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}">
+      <div class="modal__error error__cardNum"></div>
+      <div class="modal__card__wrapper__validCVV">
+        VALID: <input type="text" id="modal__input__card__date" class="modal__input" placeholder="DATE" pattern="^((0[1-9])|(1[0-2]))\/[2-9]([3-9])$">
+        CVV: <input type="text" id="modal__input__card__CVV" class="modal__input" placeholder="CVV" pattern="[0-9]{3}">
+      </div>
+      <div class="modal__error error__date"></div>
+      <div class="modal__error error__cvv"></div>
+    </div>
+    <button class="btn__modal__confirm">CONFIRM</button>
+  </section>
+
   <footer class="footer">
   </footer>
 

@@ -1,6 +1,7 @@
 import myJson from './products.json' assert {
   type: 'json'
 };
+import actionModal from './modal.js';
 
 function fillCartPage() {
   let cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
@@ -20,7 +21,7 @@ function fillCartPage() {
       itemN.className = 'cart__prouducts__list__n';
       itemN.innerHTML = `${i+1}`;
       document.querySelectorAll('.cart__prouducts__list')[i].append(itemN);
-      
+
       let itemThumb = document.createElement('div');
       itemThumb.className = 'cart__prouducts__list__photo';
       const itemImg = new Image();
@@ -30,22 +31,22 @@ function fillCartPage() {
       itemImg.className = "img__item";
       itemThumb.appendChild(itemImg)
       document.querySelectorAll('.cart__prouducts__list')[i].append(itemThumb);
-      
-     
+
+
       let itemNameWrapper = document.createElement('div');
       itemNameWrapper.className = 'cart__prouducts__info__wrapper';
       document.querySelectorAll('.cart__prouducts__list__photo')[i].append(itemNameWrapper);
-      
+
       let itemName = document.createElement('div');
       itemName.className = 'cart__prouducts__list__detail__title';
       itemName.innerHTML = `${myJson[productId-1].name}`;
       document.querySelectorAll('.cart__prouducts__info__wrapper')[i].append(itemName);
-      
+
       let itemStock = document.createElement('div');
       itemStock.className = 'cart__prouducts__list__count__stock';
       itemStock.innerHTML = `Stock: ${myJson[productId-1].stock}`;
       document.querySelectorAll('.cart__prouducts__info__wrapper')[i].append(itemStock);
-     
+
       let itemRate = document.createElement('div');
       itemRate.className = 'cart__prouducts__list__detail__rating';
       itemRate.innerHTML = `Rating: ${myJson[productId-1].rating}`;
@@ -70,18 +71,18 @@ function fillCartPage() {
       itemCountSum.id = `items__sum-${productId}`;
       itemCountSum.innerHTML = productCount;
       document.querySelectorAll('.cart__prouducts__list__count__items')[i].append(itemCountSum);
-      
+
       let newBtnRight = document.createElement('button');
       newBtnRight.className = 'btn_items_right';
       newBtnRight.id = `btn_items_right-${productId}`;
       newBtnRight.innerText = '+';
       document.querySelectorAll('.cart__prouducts__list__count__items')[i].appendChild(newBtnRight);
-      
+
       let itemPriceSum = document.createElement('div');
       itemPriceSum.className = 'cart__prouducts__list__count__sum';
       itemPriceSum.innerHTML = `${myJson[productId-1].price * productCount}$`;
       document.querySelectorAll('.cart__prouducts__list')[i].append(itemPriceSum);
-      
+
       let itemPriceSumSubtotal = document.createElement('div');
       itemPriceSumSubtotal.className = 'cart__prouducts__list__count__subtotal';
       itemPriceSumSubtotal.innerHTML = `${myJson[productId-1].price} $`;
@@ -137,7 +138,7 @@ function fillCartPage() {
         container.id = i.id;
 
         if (i.id === item_id) {
-          if (document.getElementById(`items__sum-${i.id}`).innerHTML < myJson[item_id-1].stock) {
+          if (document.getElementById(`items__sum-${i.id}`).innerHTML <= myJson[item_id-1].stock) {
             container.count = --i.count;
           } else {
             container.count = i.count;
@@ -166,7 +167,7 @@ function fillCartPage() {
       sumCount += cartProducts[i].count;
       sumPrice += cartProducts[i].count * cartProducts[i].price;
     }
-    console.log(sumPrice);
+
     document.querySelector('.cart__summary__list__count__items').innerHTML = sumCount;
     document.querySelector('.cart__summary__list__total__sum').innerHTML = `${sumPrice}$`
 
@@ -174,6 +175,8 @@ function fillCartPage() {
     document.querySelector('.header__cost').innerHTML = `Cart total: ${sumPrice}$`
   }
   updateCount()
+  actionModal()
+
 }
 
 export default fillCartPage
