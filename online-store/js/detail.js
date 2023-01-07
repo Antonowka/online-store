@@ -109,7 +109,21 @@ function fillDetailPage() {
     });
     localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
     updateHeader();
+    window.location.href = '#cart';
 
+    const transparentModal = document.querySelector('.transparent__modal');
+    transparentModal.addEventListener('click', closeModalWindow);
+    const modalWindow = document.querySelector('.purchase__modal');
+
+    transparentModal.style.display = 'block';
+    modalWindow.style.display = 'block';
+
+    function closeModalWindow() {
+      transparentModal.style.display = 'none';
+      modalWindow.style.display = 'none';
+    }
+
+    actionModal()
   }
 }
 

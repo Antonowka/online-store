@@ -175,7 +175,26 @@ function fillCartPage() {
     document.querySelector('.header__cost').innerHTML = `Cart total: ${sumPrice}$`
   }
   updateCount()
-  actionModal()
+
+  if (cartProducts.length > 0) {
+    const btn_buy_now = document.querySelector('.btn__buynow');
+    btn_buy_now.addEventListener('click', showModalWindow);
+    const transparentModal = document.querySelector('.transparent__modal');
+    transparentModal.addEventListener('click', closeModalWindow);
+    const modalWindow = document.querySelector('.purchase__modal');
+
+    function showModalWindow() {
+      transparentModal.style.display = 'block';
+      modalWindow.style.display = 'block';
+    }
+
+    function closeModalWindow() {
+      transparentModal.style.display = 'none';
+      modalWindow.style.display = 'none';
+    }
+
+    actionModal()
+  }
 
 }
 
