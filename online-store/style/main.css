@@ -132,14 +132,14 @@ body {
 }
 
 .products {
-  width: 100%;
+  max-width: 1100px;
   margin-bottom: 50px;
 }
 
 .products-container {
   display: grid;
   gap: 30px 30px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 @media (max-width:1440px){
   .products-container {
@@ -148,7 +148,7 @@ body {
 }
 
 .product-item {
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   border: solid 1px var(--gray);
   border-radius: 8px;
@@ -174,6 +174,7 @@ body {
   line-height: 1.1;
   margin: 20px;
   color: var(--fonts);
+  transition: .3s;
 }
 
 .product-price {
@@ -207,6 +208,7 @@ body {
   gap: 20px;
 }
 
+/* VIEW MODE ALL CODE */
 .view-mode {
   display: flex;
   gap: 20px;
@@ -214,8 +216,8 @@ body {
 
 .view-box {
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--dark-gray);
   background: var(--dark-gray);
   border-radius: 4px;
@@ -223,7 +225,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1px 7px;
+  transition: all .3s ease;
+}
+
+.view-box.active {
   gap: 1px 4px;
+  transition: .3s ease;
 }
 
 .viev-item-box {
@@ -231,7 +239,34 @@ body {
   width: 10px;
   height: 10px;
   background: var(--main);
-  border-radius: 3px;
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+
+.view-box.active .viev-item-box {
+  display: flex;
+  width: 8px;
+  height: 8px;
+  background: var(--main);
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+
+.small-view{
+  display: none;
+}
+
+.products-container.active {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width:1440px){
+  .products-container.active  {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.products-container.active .product-item__info{
+  font-size: 18px;
 }
 
 .view-line {

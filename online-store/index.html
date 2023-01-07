@@ -148,70 +148,69 @@
                   </select>
                 </div>
                 <div class="view-mode">
-                  <div class="small-view">
-                    <!-- <img src="" alt="small-view"> -->
-                    <div class="view-box">
-                      <div class="viev-item-box"></div>
-                      <div class="viev-item-box"></div>
-                      <div class="viev-item-box"></div>
-                      <div class="viev-item-box"></div>
-                    </div>
-                  </div>
-                  <div class="big-view active-view-mode">
-                    <div class="view-line">
-                      <div class="viev-item-line"></div>
-                      <div class="viev-item-line"></div>
-                      <div class="viev-item-line"></div>
-                    </div>
-                    <!-- <img src="" alt="big-view"> -->
+                  <div class="view-box">
+                    <div class="viev-item-box"></div>
+                    <div class="viev-item-box"></div>
+                    <div class="viev-item-box"></div>
+                    <div class="viev-item-box"></div>
+                    <div class="viev-item-box small-view"></div>
+                    <div class="viev-item-box small-view"></div>
+                    <div class="viev-item-box small-view"></div>
+                    <div class="viev-item-box small-view"></div>
+                    <div class="viev-item-box small-view"></div>
                   </div>
                 </div>
-              </div>
-              <div class="product-list">
-                <div class="products-container" data-user-cards-container></div>
-                <template data-user-template>
-                  <div class="product-item">
-                    <div class="product-item__info">
-                      <h3 class="product-name" data-name></h3>
-                      <p class="product-price">
-                        <span class="product-cost" data-cost></span>
-                      </p>
+                <div class="product-list">
+                  <div class="products-container" data-user-cards-container></div>
+                  <template data-user-template>
+                    <div class="product-item">
+                      <div class="product-item__info">
+                        <h3 class="product-name" data-name></h3>
+                        <p class="product-price">
+                          <span class="product-cost" data-cost></span>
+                        </p>
+                      </div>
+                      <div class="product-item__image_container">
+                        <a href="" data-href>
+                          <img class="product-item__image" src="" data-src>
+                        </a>
+                      </div>
+                      <div class="product-buttons">
+                        <button class="button button__add" data-btn-add>add to cart</button>
+                        <button class="button button__buy__now" data-btn-buy-now>buy now</button>
+                      </div>
                     </div>
-                    <div class="product-item__image_container">
-                      <a href="" data-href>
-                        <img class="product-item__image" src="" data-src>
-                      </a>
-                    </div>
-                    <div class="product-buttons">
-                      <button class="button button__add" data-btn-add>add to cart</button>
-                      <button class="button button__buy__now" data-btn-buy-now>buy now</button>
-                    </div>
-                  </div>
-                </template>
+                  </template>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
   </main>
 
   <div class="transparent__modal"></div>
   <section class="purchase__modal">
     <h2>Personal details</h2>
-    <input type="text" id="modal__input__name" class="modal__input" placeholder="NAME LASTNAME" pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}">
+    <input type="text" id="modal__input__name" class="modal__input" placeholder="NAME LASTNAME"
+      pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}">
     <div class="modal__error error__name"></div>
-    <input type="text" id="modal__input__phone" class="modal__input" placeholder="PHONE NUMBER" pattern="[\+]\d{3}\s\d{3}[\-]\d{3}">
+    <input type="text" id="modal__input__phone" class="modal__input" placeholder="PHONE NUMBER"
+      pattern="[\+]\d{3}\s\d{3}[\-]\d{3}">
     <div class="modal__error error__phone"></div>
-    <input type="text" id="modal__input__adress" class="modal__input" placeholder="DELIVERY ADRESS" pattern="[A-Za-z]{5,}\s[A-Za-z]{5,}\s[A-Za-z]{5,}">
+    <input type="text" id="modal__input__adress" class="modal__input" placeholder="DELIVERY ADRESS"
+      pattern="[A-Za-z]{5,}\s[A-Za-z]{5,}\s[A-Za-z]{5,}">
     <div class="modal__error error__adress"></div>
-    <input type="text" id="modal__input__email" class="modal__input" placeholder="E-MAIL" type="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+    <input type="text" id="modal__input__email" class="modal__input" placeholder="E-MAIL" type="email"
+      pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
     <div class="modal__error error__email"></div>
     <h2>Credit card details</h2>
     <div class="modal__card__wrapper">
-      <input type="text" id="modal__input__cardNum" class="modal__input" placeholder="CARD NUMBER" pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}">
+      <input type="text" id="modal__input__cardNum" class="modal__input" placeholder="CARD NUMBER"
+        pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}">
       <div class="modal__error error__cardNum"></div>
       <div class="modal__card__wrapper__validCVV">
-        VALID: <input type="text" id="modal__input__card__date" class="modal__input" placeholder="DATE" pattern="^((0[1-9])|(1[0-2]))\/[2-9]([3-9])$">
+        VALID: <input type="text" id="modal__input__card__date" class="modal__input" placeholder="DATE"
+          pattern="^((0[1-9])|(1[0-2]))\/[2-9]([3-9])$">
         CVV: <input type="text" id="modal__input__card__CVV" class="modal__input" placeholder="CVV" pattern="[0-9]{3}">
       </div>
       <div class="modal__error error__date"></div>
