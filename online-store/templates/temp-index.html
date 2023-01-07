@@ -107,22 +107,16 @@
             </select>
           </div>
           <div class="view-mode">
-            <div class="small-view">
-              <!-- <img src="" alt="small-view"> -->
-              <div class="view-box">
-                <div class="viev-item-box"></div>
-                <div class="viev-item-box"></div>
-                <div class="viev-item-box"></div>
-                <div class="viev-item-box"></div>
-              </div>
-            </div>
-            <div class="big-view active-view-mode">
-              <div class="view-line">
-                <div class="viev-item-line"></div>
-                <div class="viev-item-line"></div>
-                <div class="viev-item-line"></div>
-              </div>
-              <!-- <img src="" alt="big-view"> -->
+            <div class="view-box">
+              <div class="viev-item-box"></div>
+              <div class="viev-item-box"></div>
+              <div class="viev-item-box"></div>
+              <div class="viev-item-box"></div>
+              <div class="viev-item-box small-view"></div>
+              <div class="viev-item-box small-view"></div>
+              <div class="viev-item-box small-view"></div>
+              <div class="viev-item-box small-view"></div>
+              <div class="viev-item-box small-view"></div>
             </div>
           </div>
         </div>
@@ -131,6 +125,10 @@
           <div class="products-container" data-user-cards-container></div>
           <template data-user-template>
             <div class="product-item">
+              <div class="product-item__rating-wrapper">
+                <div class="product-item__rating" data-rating></div>
+                <img class="main-star" src="../assets/icons/star.png" alt="star">
+              </div>
               <div class="product-item__info">
                 <h3 class="product-name" data-name></h3>
                 <p class="product-price">

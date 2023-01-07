@@ -55,7 +55,7 @@
 
 .header__count {
   height: 24px;
-  width: 24px;
+  max-width: 100%;
   background-color: var(--main);
   box-sizing: border-box;
   border: 1px solid var(--fonts);
