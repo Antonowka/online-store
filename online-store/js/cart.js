@@ -10,6 +10,11 @@ function fillCartPage() {
   function updateCart() {
     cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
     document.querySelector('.cart__prouducts__list__wrapper').innerHTML = '';
+    document.querySelector('.cart__prouducts__list__wrapper').style.textAlign = 'none';
+    if (cartProducts.length == 0) {
+      document.querySelector('.cart__prouducts__list__wrapper').style.textAlign = 'center';
+      document.querySelector('.cart__prouducts__list__wrapper').innerHTML = 'CART IS EMPTY';
+    }
     for (let i = 0; i < cartProducts.length; i++) {
       let productCount = cartProducts[i].count;
 
@@ -92,6 +97,7 @@ function fillCartPage() {
       document.querySelectorAll('.btn_items_left')[i].addEventListener('click', countLeft);
     }
     updateCount()
+    updateDiscount()
   }
 
   // <--- Функция увеличения
@@ -118,6 +124,7 @@ function fillCartPage() {
 
     localStorage.setItem('RS-cart', JSON.stringify(newArray));
     updateCount()
+    updateDiscount()
   }
   // Функция увеличения --->
 
@@ -156,6 +163,7 @@ function fillCartPage() {
     localStorage.setItem('RS-cart', JSON.stringify(newArray));
     updateCount()
     updateCart()
+    updateDiscount()
   }
 
   function updateCount() {
@@ -175,6 +183,7 @@ function fillCartPage() {
     document.querySelector('.header__cost').innerHTML = `Cart total: ${sumPrice}$`
   }
   updateCount()
+  updateDiscount()
 
   if (cartProducts.length > 0) {
     const btn_buy_now = document.querySelector('.btn__buynow');
@@ -196,6 +205,79 @@ function fillCartPage() {
     actionModal()
   }
 
+  // DISCOUNT START
+  const promoInput = document.querySelector('.promo__input');
+  promoInput.addEventListener('input', getPromo);
+  const promoBtnAdd1 = document.querySelector('.btn__promo__add1');
+  promoBtnAdd1.addEventListener('click', letDiscount);
+  const promoBtnAdd2 = document.querySelector('.btn__promo__add2');
+  promoBtnAdd2.addEventListener('click', letDiscount);
+  const promoBtnDrop1 = document.querySelector('.btn__promo__drop1');
+  promoBtnDrop1.addEventListener('click', leaveDiscount1);
+  const promoBtnDrop2 = document.querySelector('.btn__promo__drop2');
+  promoBtnDrop2.addEventListener('click', leaveDiscount2);
+  document.querySelector('.promo__wrapper__apply1').style.display = 'none';
+  document.querySelector('.promo__wrapper__apply2').style.display = 'none';
+  document.querySelector('.promo__wrapper1').style.display = 'none';
+  document.querySelector('.promo__wrapper2').style.display = 'none';
+
+  function getPromo() {
+    if (promoInput.value == 'rs' && document.querySelector('.promo__wrapper__apply1').style.display == 'none') {
+      document.querySelector('.promo__wrapper1').style.display = 'flex';
+    } else {
+      if (promoInput.value == 'sr' && document.querySelector('.promo__wrapper__apply2').style.display == 'none') {
+        document.querySelector('.promo__wrapper2').style.display = 'flex';
+      } else {
+        document.querySelector('.promo__wrapper1').style.display = 'none';
+        document.querySelector('.promo__wrapper2').style.display = 'none';
+      }
+    }
+  }
+
+  function letDiscount() {
+    promoInput.value = '';
+    if (document.querySelector('.promo__wrapper1').style.display == 'flex') {
+      document.querySelector('.promo__wrapper__apply1').style.display = 'flex';
+      document.querySelector('.promo__wrapper1').style.display = 'none';
+      document.querySelector('.cart__summary__list__total').style.textDecoration = 'line-through';
+      document.querySelector('.cart__summary__list__total__disc').style.display = 'flex';
+    } else {
+      document.querySelector('.promo__wrapper__apply2').style.display = 'flex';
+      document.querySelector('.promo__wrapper2').style.display = 'none';
+      document.querySelector('.cart__summary__list__total').style.textDecoration = 'line-through';
+      document.querySelector('.cart__summary__list__total__disc').style.display = 'flex';
+    }
+    updateDiscount();
+  }
+
+  function leaveDiscount1() {
+    document.querySelector('.promo__wrapper__apply1').style.display = 'none';
+    if (document.querySelector('.promo__wrapper__apply2').style.display == 'none') {
+      document.querySelector('.cart__summary__list__total').style.textDecoration = 'none';
+      document.querySelector('.cart__summary__list__total__disc').style.display = 'none';
+    }
+    updateDiscount()
+  }
+  function leaveDiscount2() {
+    document.querySelector('.promo__wrapper__apply2').style.display = 'none';
+    if (document.querySelector('.promo__wrapper__apply1').style.display == 'none') {
+      document.querySelector('.cart__summary__list__total').style.textDecoration = 'none';
+      document.querySelector('.cart__summary__list__total__disc').style.display = 'none';
+    }
+    updateDiscount()
+  }
+
+  function updateDiscount() {
+    let currentSumPrice = parseInt(document.querySelector('.cart__summary__list__total__sum').innerHTML.slice(0, -1), 10);
+    let newSumPrice = 0
+    if (document.querySelector('.promo__wrapper__apply1').style.display =='flex' && document.querySelector('.promo__wrapper__apply2').style.display == 'flex') {
+      newSumPrice = currentSumPrice*0.8
+    } else {
+      newSumPrice = currentSumPrice*0.9
+    }
+    document.querySelector('.cart__summary__list__total__sum__disc').innerHTML = `${newSumPrice.toFixed(0)}$`
+  }
+  // DISCOUNT END
 }
 
 export default fillCartPage
