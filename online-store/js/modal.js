@@ -1,7 +1,5 @@
 function actionModal() {
-  const btn_buy_now = document.querySelector('.btn__buynow');
   const modalWindow = document.querySelector('.purchase__modal');
-  const transparentModal = document.querySelector('.transparent__modal');
   const btn_modal_confirm = document.querySelector('.btn__modal__confirm');
   const modal_input_name = document.getElementById('modal__input__name');
   const modal_input_phone = document.getElementById('modal__input__phone');
@@ -11,23 +9,11 @@ function actionModal() {
   const modal_input_cardDate = document.getElementById('modal__input__card__date');
   const modal_input_cvv = document.getElementById('modal__input__card__CVV');
 
-  btn_buy_now.addEventListener('click', showModalWindow);
-  transparentModal.addEventListener('click', closeModalWindow);
   btn_modal_confirm.addEventListener('click', validateForms);
   modal_input_phone.addEventListener('input', validatePhone);
   modal_input_cardDate.addEventListener('input', validateDate);
   modal_input_cardNum.addEventListener('input', validateCardNum);
   modal_input_cvv.addEventListener('input', validateCVV);
-
-  function showModalWindow() {
-    transparentModal.style.display = 'block';
-    modalWindow.style.display = 'block';
-  }
-
-  function closeModalWindow() {
-    transparentModal.style.display = 'none';
-    modalWindow.style.display = 'none';
-  }
 
   function validateForms() {
     if (!modal_input_name.checkValidity() || modal_input_name.value == '') {
@@ -80,7 +66,6 @@ function actionModal() {
     }
 
     if (join_error_text == '') {
-      // console.log('ВСЕ ПОЛЯ ЗАПОЛНЕНЫ ВЕРНО!!!')
       modalWindow.innerHTML = 'Thank you for your purchase. After 3 seconds you will be redirected to the main page'
       setTimeout(successPurchase, 3000);
     }

@@ -159,7 +159,8 @@
 }
 
 .cart__summary__list__count__items,
-.cart__summary__list__total__sum {
+.cart__summary__list__total__sum,
+.cart__summary__list__total__sum__disc {
   vertical-align: middle;
   color: var(--khaki);
 }
@@ -209,4 +210,23 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
+}
+
+.cart__summary__list__total__disc {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.promo__wrapper1,
+.promo__wrapper2,
+.promo__wrapper__apply1,
+.promo__wrapper__apply2 {
+  display: none;
+  gap: 10px;
+  vertical-align: middle;
+}
+
+.promo__text {
+  align-self: center;
 }
