@@ -3,39 +3,39 @@ import myJson from './products.json' assert {
 };
 
 const products = myJson;
-const sotring = document.querySelector('.sort-menu')
-const priceLowest = document.querySelector('.price-lowest')
-const priceHighest = document.querySelector('.price-highest')
-const ratingLowest = document.querySelector('.rating-lowest')
-const ratingHighest = document.querySelector('.rating-highest')
-const nameAz = document.querySelector('.name-az')
-const nameZa = document.querySelector('.name-za')
-const productContainer = document.querySelector('.products-container')
+const sotring: HTMLElement | null = document.querySelector('.sort-menu');
+const priceLowest: HTMLElement | null = document.querySelector('.price-lowest');
+const priceHighest: HTMLElement | null = document.querySelector('.price-highest');
+const ratingLowest: HTMLElement | null = document.querySelector('.rating-lowest');
+const ratingHighest: HTMLElement | null = document.querySelector('.rating-highest');
+const nameAz: HTMLElement | null = document.querySelector('.name-az');
+const nameZa: HTMLElement | null = document.querySelector('.name-za');
+const productContainer: HTMLElement | null = document.querySelector('.products-container');
 
-sotring.addEventListener("change", () => {
-  if(priceLowest.selected === true){
+(sotring as HTMLElement).addEventListener("change", () => {
+  if((priceLowest as HTMLOptionElement).selected === true){
     products.sort((a, b) => a.price - b.price);
-    productContainer.innerHTML = '';
+    (productContainer as HTMLElement).innerHTML = '';
     newProduct()
-  }else if(priceHighest.selected === true){
+  }else if((priceHighest as HTMLOptionElement).selected === true){
     products.sort((a, b) => b.price - a.price);
-    productContainer.innerHTML = '';
+    (productContainer as HTMLElement).innerHTML = '';
     newProduct()
-  }else if(ratingLowest.selected === true){
+  }else if((ratingLowest as HTMLOptionElement).selected === true){
     products.sort((a, b) => a.rating - b.rating);
-    productContainer.innerHTML = '';
+    (productContainer as HTMLElement).innerHTML = '';
     newProduct()
-  }else if(ratingHighest.selected === true){
+  }else if((ratingHighest as HTMLOptionElement).selected === true){
     products.sort((a, b) => b.rating - a.rating);
-    productContainer.innerHTML = '';
+    (productContainer as HTMLElement).innerHTML = '';
     newProduct()
-  }else if(nameAz.selected === true){
+  }else if((nameAz as HTMLOptionElement).selected === true){
     products.sort((a, b) => a.name > b.name ? 1 : -1);
-    productContainer.innerHTML = '';
+    (productContainer as HTMLElement).innerHTML = '';
     newProduct()
-  }else if(nameZa.selected === true){
+  }else if((nameZa as HTMLOptionElement).selected === true){
     products.sort((a, b) => a.name > b.name ? -1 : 1);
-    productContainer.innerHTML = '';
+    (productContainer as HTMLElement).innerHTML = '';
     newProduct()
   }
 });
@@ -44,11 +44,11 @@ sotring.addEventListener("change", () => {
  function newProduct () {
   for (let i = 0; i < products.length; i++) {
     const element = products[i];
-    const productContainer = document.querySelector('.products-container')
+    const productContainer: HTMLElement | null = document.querySelector('.products-container')
 
     const newProduct = document.createElement('div');
     newProduct.className = 'product-item';
-    productContainer.append(newProduct)
+    (productContainer as HTMLElement).append(newProduct)
 
     const productItemInfo = document.createElement('div');
     productItemInfo.className = 'product-item__info'
@@ -63,7 +63,7 @@ sotring.addEventListener("change", () => {
     productPrice.className = 'product-price';
     productItemInfo.append(productPrice)
 
-    const productCost = document.createElement('span');
+    const productCost: HTMLElement | null = document.createElement('span');
     productCost.className = 'product-cost'
     productPrice.append(productCost)
 
@@ -86,7 +86,7 @@ sotring.addEventListener("change", () => {
     productButtons.append(buttonBuy)
 
     productName.innerHTML = element.name;
-    productCost.innerHTML = element.price;
+    ((productCost as HTMLElement).innerHTML as unknown as number) = element.price;
     productItemImage.src = element.thumbnail
   }
 }

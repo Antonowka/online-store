@@ -3,8 +3,8 @@ import updateHeader from './updateCart.js'
 import viewmode from './view-mode.js'
 import dualInputRange from './input-dual-range.js'
 
-const string = (a, b, dir = 1) => a?.localeCompare(b) * dir
-const number = (a, b, dir = 1) => (a - b) * dir
+const string = (a: string, b: string, dir = 1) => a?.localeCompare(b) * dir
+const number = (a: number, b: number, dir = 1) => (a - b) * dir
 
 const sortFnByField = {
   default: () => 0,
@@ -47,7 +47,7 @@ function createProducts() {
     })
   }
 
-  
+
   fetch('../js/products.json')
     .then(res => res.json())
     .then(data => {
@@ -98,8 +98,8 @@ function createProducts() {
 
           const sortFn = sortFnByField[sortBy] ?? sortFnByField.default
           const dir = sortByDirection === 'asc' ? 1 : -1
-      
-          const ary = filteredProducts.sort((a, b) => {      
+
+          const ary = filteredProducts.sort((a, b) => {
             return sortFn(a[sortBy], b[sortBy], dir)
           })
 
@@ -127,12 +127,12 @@ function createProducts() {
               if (!acc[curr.dataset.filter]) {
                 acc[curr.dataset.filter] = []
               }
-        
+
               acc[curr.dataset.filter].push(curr.value)
-        
+
               return acc
           }, {})
-          
+
           const ary = productsRaw.filter(product => {
             return Object.keys(filters).every(filter => {
               return filters[filter].includes(product[filter])
