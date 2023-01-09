@@ -2,6 +2,7 @@
 import {createProducts, viewmode, dualInputRange} from './main.js';
 import fillDetailPage from './detail.js'
 import fillCartPage from './cart.js'
+import '../style/style.css'
 // ---->>>
 
 import myJson from './products.json' assert {
@@ -16,7 +17,7 @@ const items = {}
 for (let i = 0; i < products.length; i++) {
 	var key = 'item-' + products[i].id;
 	var value = {
-		template: "/templates/temp-page-detail.html",
+		template: "./templates/temp-page-detail.html",
 		title: "Item | " + pageTitle,
 	};
 
@@ -25,15 +26,15 @@ for (let i = 0; i < products.length; i++) {
 
 const routes = {
 	404: {
-		template: "/templates/temp-page-404.html",
+		template: "./templates/temp-page-404.html",
 		title: "404 | " + pageTitle,
 	},
 	"/": {
-		template: "/templates/temp-index.html",
+		template: "./templates/temp-index.html",
 		title: "Home | " + pageTitle,
 	},
 	cart: {
-		template: "/templates/temp-page-cart.html",
+		template: "./templates/temp-page-cart.html",
 		title: "Cart | " + pageTitle,
 	},
 };
