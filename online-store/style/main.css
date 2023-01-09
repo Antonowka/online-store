@@ -159,6 +159,18 @@ body {
   line-height: 150%;
   transition: .3s ease;
 }
+.product-item__stock-wrapper{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 8%;
+  left: 10.7%;
+  transform: translate(-50%, -50%);
+  z-index: 111;
+  font-size: 18px;
+  line-height: 150%;
+  transition: .3s ease;
+}
 
 .main-star{
   max-height: 16px;
@@ -296,6 +308,11 @@ body {
 .products-container.active .product-item__rating-wrapper{
   top: 12.5%;
   right: 16%;
+  font-size: 16px;
+}
+.products-container.active .product-item__stock-wrapper{
+  top: 12.5%;
+  left: 20%;
   font-size: 16px;
 }
 
