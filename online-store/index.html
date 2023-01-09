@@ -39,158 +39,7 @@
     </div>
   </header>
 
-  <main class="main">
-    <section class="page">
-      <div class="container">
-        <div class="section-center">
-          <h3>
-            <a href="">Home</a> / Products
-          </h3>
-        </div>
-      </div>
-    </section>
-    <div class="store-page">
-      <div class="container">
-        <div class="store-page__wrapper">
-          <!-- FILTERS -->
-          <div class="filters-container">
-            <input class="input-search" type="search" placeholder="Search product" data-search id="search">
-            <!-- Category -->
-            <h3 class="filter-name">Category</h3>
-            <div class="filter-category">
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="smartphones" value="smartphones">
-                <label class="filter-label" for="smartphones">Smartphones</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="laptops" value="laptops">
-                <label class="filter-label" for="laptops">Laptops</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="monitors" value="monitors">
-                <label class="filter-label" for="monitors">Monitors</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="smartwatch" value="smartwatch">
-                <label class="filter-label" for="smartwatch">Smartwatch</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="tv" value="tv">
-                <label class="filter-label" for="tv">TV</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="tablets" value="tablets">
-                <label class="filter-label" for="tablets">Tablets</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="headphones" value="headphones">
-                <label class="filter-label" for="headphones">Headphones</label>
-              </div>
-            </div>
-            <!-- Brand -->
-            <h3 class="filter-name">Brand</h3>
-            <div class="filter-brand">
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="apple" value="apple">
-                <label class="filter-label" for="apple">Apple</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="samsung" value="samsung">
-                <label class="filter-label" for="samsung">Samsung</label>
-              </div>
-              <div class="filter-item">
-                <input class="filter-input" type="checkbox" id="xiaomi" value="xiaomi">
-                <label class="filter-label" for="xiaomi">Xiaomi</label>
-              </div>
-              <!-- Price -->
-              <h3 class="filter-name">Price</h3>
-              <div class="filter-range">
-                <div class="filter-range-min filter-range-text">0 $</div>
-                <span class="filter-range-line"></span>
-                <div class="filter-range-max filter-range-text">2500 $</div>
-              </div>
-              <div class="multi-range">
-                <input class="input-range" type="range" min="0" max="50" class="">
-                <!-- <input type="range" min="0" max="50" class=""> -->
-              </div>
-              <!-- Stock -->
-              <h3 class="filter-name">Stock</h3>
-              <div class="filter-range">
-                <div class="filter-range-min filter-range-text">1</div>
-                <span class="filter-range-line"></span>
-                <div class="filter-range-max filter-range-text">250</div>
-              </div>
-              <div class="multi-range">
-                <input class="input-range" type="range" min="0" max="100" class="">
-                <!-- <input type="range" min="0" max="100" class=""> -->
-              </div>
-              <!-- BUTTONs -->
-              <div class="reset-total">
-                <button class="button">Clear Filters</button>
-                <button class="button">Copy Link</button>
-              </div>
-            </div>
-            <!-- PRODUCTS -->
-            <div class="products">
-              <div class="sort-products">
-                <div class="sort-print">
-                  <h3 class="sort-title">sort by</h3>
-                  <select class="sort-menu">
-                    <option value="sort-option" disabled="" selected="">sort options:</option>
-                    <option value="price-asc">price lowest</option>
-                    <option value="price-desc">price highest</option>
-                    <option value="rating-asc">rating lowest</option>
-                    <option value="rating-desc">rating highest</option>
-                    <option value="name-asc">name a-z</option>
-                    <option value="name-desc">name z-a</option>
-                  </select>
-                </div>
-                <div class="view-mode">
-                  <div class="view-box">
-                    <div class="viev-item-box"></div>
-                    <div class="viev-item-box"></div>
-                    <div class="viev-item-box"></div>
-                    <div class="viev-item-box"></div>
-                    <div class="viev-item-box small-view"></div>
-                    <div class="viev-item-box small-view"></div>
-                    <div class="viev-item-box small-view"></div>
-                    <div class="viev-item-box small-view"></div>
-                    <div class="viev-item-box small-view"></div>
-                  </div>
-                </div>
-                <div class="product-list">
-                  <div class="products-container" data-user-cards-container></div>
-                  <template data-user-template>
-                    <div class="product-item">
-                      <div class="product-item__rating-wrapper">
-                        <div class="product-item__rating" data-rating></div>
-                        <img class="main-star" src="../assets/icons/star.png" alt="star">
-                      </div>
-                      <div class="product-item__stock-wrapper">
-                        <p class="product-item__stock" data-stock></p>
-                      </div>
-                      <div class="product-item__info">
-                        <h3 class="product-name" data-name></h3>
-                        <p class="product-price">
-                          <span class="product-cost" data-cost></span>
-                        </p>
-                      </div>
-                      <div class="product-item__image_container">
-                        <a href="" data-href>
-                          <img class="product-item__image" src="" data-src>
-                        </a>
-                      </div>
-                      <div class="product-buttons">
-                        <button class="button button__add" data-btn-add>Add to cart</button>
-                      </div>
-                    </div>
-                  </template>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  </main>
+  <main class="main"></main>
 
   <div class="transparent__modal"></div>
   <section class="purchase__modal">
@@ -226,9 +75,12 @@
   <footer class="footer">
     <div class="footer__wrapper">
       <div class="footer__links">
-        <div class="footer_icon icon-youtube"><a class="footer_icon_link" target="_blank" href="https://rs.school/js/"></a></div>
-        <div class="footer_icon icon-github"><a class="footer_icon_link" target="_blank" href="https://github.com/Antonowka"></a></div>
-        <div class="footer_icon icon-github"><a class="footer_icon_link" target="_blank" href="https://github.com/max7394"></a></div>
+        <div class="footer_icon icon-youtube"><a class="footer_icon_link" target="_blank"
+            href="https://rs.school/js/"></a></div>
+        <div class="footer_icon icon-github"><a class="footer_icon_link" target="_blank"
+            href="https://github.com/Antonowka"></a></div>
+        <div class="footer_icon icon-github"><a class="footer_icon_link" target="_blank"
+            href="https://github.com/max7394"></a></div>
         <div class="footer_icon icon-school"><a class="footer_icon_link" target="_blank"
             href="https://www.youtube.com/@RollingScopesSchool"></a>
         </div>
