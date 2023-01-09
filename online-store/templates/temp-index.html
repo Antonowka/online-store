@@ -96,12 +96,12 @@
             <h3 class="sort-title">sort by</h3>
             <select class="sort-menu">
               <option value="sort-option" disabled="" selected="">sort options:</option>
-              <option value="price-lowest" class="price-lowest">price lowest</option>
-              <option value="price-highest" class="price-highest">price highest</option>
-              <option value="rating-lowest" class="rating-lowest">rating lowest</option>
-              <option value="rating-highest" class="rating-highest">rating highest</option>
-              <option value="name-az" class="name-az">name a-z</option>
-              <option value="name-za" class="name-za">name z-a</option>
+              <option value="price-asc">price lowest</option>
+              <option value="price-desc">price highest</option>
+              <option value="rating-asc">rating lowest</option>
+              <option value="rating-desc">rating highest</option>
+              <option value="name-asc">name a-z</option>
+              <option value="name-desc">name z-a</option>
             </select>
           </div>
           
@@ -120,7 +120,6 @@
           </div>
         </div>
         <div class="product-list">
-          <div class="products-container"></div>
           <div class="products-container" data-user-cards-container></div>
           <template data-user-template>
             <div class="product-item">
