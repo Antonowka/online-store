@@ -6,7 +6,7 @@ const EslintPlugin = require('eslint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const baseConfig = {
-    entry: path.resolve(__dirname, './js/hash-router.ts'),
+    entry: path.resolve(__dirname, './ts/hash-router.ts'),
     mode: 'development',
     module: {
         rules: [
@@ -73,7 +73,7 @@ const baseConfig = {
               { from: "assets", to: "assets" },
               { from: "templates", to: "templates" },
             //   { from: "style", to: "style" },
-              { from: "js/products.json", to: "js/products.json" },
+              { from: "ts/products.json", to: "ts/products.json" },
             ],
           }),
     ],
