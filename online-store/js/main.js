@@ -13,19 +13,21 @@ const sortFnByField = {
   name: string,
 }
 
+let productsRaw = []
+let filteredProducts = []
+
 function createProducts() {
   const userCardTemplate = document.querySelector("[data-user-template]")
   const userCardContainer = document.querySelector("[data-user-cards-container]")
   const searchInput = document.querySelector("[data-search]")
   const sorting = document.querySelector('.sort-menu')
   const productContainer = document.querySelector('.products-container')
-  const checkboxes = document.querySelectorAll('.filter-input')
 
   function renderProducts(products) {
-    console.log('renderProducts', products)
+    filteredProducts = products
     productContainer.innerHTML = ''
-    // render product list as HTML here
-    products.forEach(product => {
+
+    filteredProducts.forEach(product => {
       const card = userCardTemplate.content.cloneNode(true).children[0]
       const info = card.querySelector("[data-name]")
       const cost = card.querySelector("[data-cost]")
@@ -42,27 +44,6 @@ function createProducts() {
       stock.innerHTML = `Stock: ${product.stock}`;
       userCardContainer.append(card)
       btn_add.id = `btn-add-${product.id}`;
-
-      for (let i = 0; i < checkboxes.length; i++) {
-        const checkbox = checkboxes[i];
-        checkbox.addEventListener('click', sortCheckbox)
-
-        function sortCheckbox() {
-          if (checkbox.value === product.category || checkbox.value === product.brand) {
-            info.textContent = product.name
-            cost.innerHTML = product.price + ' $';
-            src.src = product.thumbnail
-          } else if (!checkbox.checked) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        }
-      }
-      return {
-        name: product.name,
-        element: card
-      }
     })
   }
 
@@ -70,15 +51,14 @@ function createProducts() {
   fetch('../js/products.json')
     .then(res => res.json())
     .then(data => {
-      // Use renderProducts() functions to render the products here
-      const productsRaw = data
+      productsRaw = data
       renderProducts(productsRaw)
 
       // <<<--- Добавление товара в корзину Добавление товара в корзину --->>>
       let cartProducts = [];
 
       if (localStorage.getItem("RS-cart") === null) {
-        localStorage.setItem('RS-cart', JSON.stringify([ ]));
+        localStorage.setItem('RS-cart', JSON.stringify([]));
       }
 
       cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
@@ -93,7 +73,6 @@ function createProducts() {
       }
 
       function addToCart(e) {
-
         const item_id = parseInt(e.currentTarget.id.slice(8), 10);
         if (document.getElementById(`btn-add-${item_id}`).innerHTML === "Add to cart") {
           document.getElementById(`btn-add-${item_id}`).innerHTML = "Drop item";
@@ -120,7 +99,7 @@ function createProducts() {
           const sortFn = sortFnByField[sortBy] ?? sortFnByField.default
           const dir = sortByDirection === 'asc' ? 1 : -1
       
-          const ary = productsRaw.sort((a, b) => {      
+          const ary = filteredProducts.sort((a, b) => {      
             return sortFn(a[sortBy], b[sortBy], dir)
           })
 
@@ -130,8 +109,37 @@ function createProducts() {
       // search
       searchInput.addEventListener("input", e => {
         const value = e.target.value.trim().toLowerCase()
-        const arr = productsRaw.filter(product => product.name.toLowerCase().includes(value))
-        renderProducts(arr)
+        if (!value) return renderProducts(productsRaw)
+
+        const ary = productsRaw.filter(product => product.name.toLowerCase().includes(value))
+        renderProducts(ary)
+      })
+
+      // filter
+      const checkboxes = document.querySelectorAll('.filter-input')
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', () => {
+          const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked)
+
+          if (!checked.length) return renderProducts(productsRaw)
+
+          const filters = checked.reduce((acc, curr) => {
+              if (!acc[curr.dataset.filter]) {
+                acc[curr.dataset.filter] = []
+              }
+        
+              acc[curr.dataset.filter].push(curr.value)
+        
+              return acc
+          }, {})
+          
+          const ary = productsRaw.filter(product => {
+            return Object.keys(filters).every(filter => {
+              return filters[filter].includes(product[filter])
+            })
+          })
+          renderProducts(ary)
+        })
       })
     })
 }
