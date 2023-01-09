@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="icon" type="image/x-icon" href="./"> <!-- added link to favicon -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <title>Online Store</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="logo">
+          <img class="logo__image" src="./assets/icons/logo.png" alt="random-logo">
+        </div>
+        <nav class="navbar">
+          <ul class="navbar__items">
+            <li class="navbar__item"><a href="" class="navbar__link">Home</a></li>
+            <li class="navbar__item"><a href="" class="navbar__link">Products</a></li>
+            <li class="navbar__item"><a href="" class="navbar__link">About</a></li>
+          </ul>
+        </nav>
+        <div class="cart__wrapper">
+          <div class="header__cost"></div>
+          <div class="cart__link">
+            <a href="#cart">
+              <img class="cart__image" src="./assets/icons/shopping-cart.png" alt="cart">
+              <div class="header__count"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main"></main>
+
+  <div class="transparent__modal"></div>
+  <section class="purchase__modal">
+    <h2 class="purchase__title">Personal details</h2>
+    <input type="text" id="modal__input__name" class="modal__input" placeholder="NAME LASTNAME"
+      pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}">
+    <div class="modal__error error__name"></div>
+    <input type="text" id="modal__input__phone" class="modal__input" placeholder="PHONE NUMBER"
+      pattern="[\+]\d{3}\s\d{3}[\-]\d{3}">
+    <div class="modal__error error__phone"></div>
+    <input type="text" id="modal__input__adress" class="modal__input" placeholder="DELIVERY ADRESS"
+      pattern="[A-Za-z]{5,}\s[A-Za-z]{5,}\s[A-Za-z]{5,}">
+    <div class="modal__error error__adress"></div>
+    <input type="text" id="modal__input__email" class="modal__input" placeholder="E-MAIL" type="email"
+      pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+    <div class="modal__error error__email"></div>
+    <h2 class="purchase__card">Credit card details</h2>
+    <div class="modal__card__wrapper">
+      <input type="text" id="modal__input__cardNum" class="modal__input" placeholder="CARD NUMBER"
+        pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}">
+      <div class="modal__error error__cardNum"></div>
+      <div class="modal__card__wrapper__validCVV">
+        VALID: <input type="text" id="modal__input__card__date" class="modal__input" placeholder="DATE"
+          pattern="^((0[1-9])|(1[0-2]))\/[2-9]([3-9])$">
+        CVV: <input type="text" id="modal__input__card__CVV" class="modal__input" placeholder="CVV" pattern="[0-9]{3}">
+      </div>
+      <div class="modal__error error__date"></div>
+      <div class="modal__error error__cvv"></div>
+    </div>
+    <button class="btn__modal__confirm">CONFIRM</button>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__links">
+        <div class="footer_icon icon-youtube"><a class="footer_icon_link" target="_blank"
+            href="https://rs.school/js/"></a></div>
+        <div class="footer_icon icon-github"><a class="footer_icon_link" target="_blank"
+            href="https://github.com/Antonowka"></a></div>
+        <div class="footer_icon icon-github"><a class="footer_icon_link" target="_blank"
+            href="https://github.com/max7394"></a></div>
+        <div class="footer_icon icon-school"><a class="footer_icon_link" target="_blank"
+            href="https://www.youtube.com/@RollingScopesSchool"></a>
+        </div>
+      </div>
+      <p class="copyright"> © Copyright 2022
+        <a class="copyright-link" target="_blank" href="https://github.com/Antonowka/online-store"> OnlineStore</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/hash-router.js"></script>
+</body>
+
+</html>
