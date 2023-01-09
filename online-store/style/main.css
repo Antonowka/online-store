@@ -396,6 +396,10 @@ body {
   transition: .2s;
 }
 
+.button.drop-active{
+
+}
+
 .button:hover{
   color: var(--main);
   background-color: var(--dark-gray);
@@ -408,11 +412,11 @@ body {
   transform: scale(1);
 }
 
-.button-active{
+.drop-active{
   color: var(--main);
   background-color: var(--dark-gray);
 }
-.button-active:hover{
+.drop-active:hover{
   color: var(--fonts);
   background-color: var(--light-gray);
 }

@@ -43,10 +43,6 @@ function createProducts() {
       userCardContainer.append(card)
       btn_add.id = `btn-add-${product.id}`;
 
-      btn_add.addEventListener('click', () => {
-        btn_add.classList.toggle('button-active')
-      })
-
       for (let i = 0; i < checkboxes.length; i++) {
         const checkbox = checkboxes[i];
         checkbox.addEventListener('click', sortCheckbox)
@@ -89,6 +85,7 @@ function createProducts() {
 
       for (let i = 0; i < cartProducts.length; i++) {
         document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'Drob item';
+        document.getElementById(`btn-add-${cartProducts[i].id}`).classList.toggle("drop-active");
       }
 
       for (let i = 0; i < productsRaw.length; i++) {
@@ -100,6 +97,7 @@ function createProducts() {
         const item_id = parseInt(e.currentTarget.id.slice(8), 10);
         if (document.getElementById(`btn-add-${item_id}`).innerHTML === "Add to cart") {
           document.getElementById(`btn-add-${item_id}`).innerHTML = "Drop item";
+          document.getElementById(`btn-add-${item_id}`).classList.toggle("drop-active");
           cartProducts.push({
             id: item_id,
             count: 1,
@@ -110,6 +108,7 @@ function createProducts() {
           document.getElementById(`btn-add-${item_id}`).innerHTML = "Add to cart";
           cartProducts = cartProducts.filter(value => value.id != item_id)
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
+          document.getElementById(`btn-add-${item_id}`).classList.remove("drop-active");
         }
         updateHeader()
       }
