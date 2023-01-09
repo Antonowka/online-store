@@ -1,5 +1,9 @@
 
 function updateHeader() {
+  if (localStorage.getItem('RS-cart') === null) {
+    localStorage.setItem('RS-cart', JSON.stringify([ ]));
+  }
+
   let cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
   let sumCount = 0;
   let sumPrice = 0;
