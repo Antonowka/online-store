@@ -1,7 +1,7 @@
 // CREATE products item from products.js
 import updateHeader from './updateCart.js'
 import viewmode from './view-mode.js'
-import dualInputRange from './input-price.js'
+import dualInputRange from './input-dual-range.js'
 
 const string = (a, b, dir = 1) => a?.localeCompare(b) * dir
 const number = (a, b, dir = 1) => (a - b) * dir
@@ -34,7 +34,6 @@ function createProducts() {
       const btn_add = card.querySelector("[data-btn-add]")
       const rating = card.querySelector("[data-rating]")
       const stock = card.querySelector("[data-stock]")
-      // const btn_buy_now = card.querySelector("[data-btn-buy-now]")
       info.textContent = product.name
       cost.innerHTML = product.price + ' $';
       src.src = product.thumbnail;
@@ -43,7 +42,6 @@ function createProducts() {
       stock.innerHTML = `Stock: ${product.stock}`;
       userCardContainer.append(card)
       btn_add.id = `btn-add-${product.id}`;
-      // btn_buy_now.id = `btn-buy-now-${product.id}`;
 
       btn_add.addEventListener('click', () => {
         btn_add.classList.toggle('button-active')
