@@ -230,7 +230,6 @@
   display: none;
   gap: 10px;
   vertical-align: middle;
-  /* flex-direction: column; */
 }
 
 .promo__text {

@@ -396,10 +396,6 @@ body {
   transition: .2s;
 }
 
-.button.drop-active{
-
-}
-
 .button:hover{
   color: var(--main);
   background-color: var(--dark-gray);
@@ -432,6 +428,6 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(15, 14, 14, 0.75);
+  background-color: rgba(15, 14, 14, 0.6);
   z-index: 400;
 }
