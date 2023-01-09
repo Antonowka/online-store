@@ -78,7 +78,7 @@ function createProducts() {
       let cartProducts = [];
 
       if (localStorage.getItem("RS-cart") === null) {
-        localStorage.setItem('RS-cart', JSON.stringify([]));
+        localStorage.setItem('RS-cart', JSON.stringify([ ]));
       }
 
       cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
