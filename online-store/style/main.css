@@ -32,6 +32,14 @@ body {
   margin-left: 300px;
 }
 
+.home-link{
+  color: var(--khaki-dark);
+  transition: .2s;
+}
+.home-link:hover{
+  text-decoration: underline;
+}
+
 /* left column filters */
 .filters-container {
   position: sticky;
@@ -41,11 +49,36 @@ body {
 
 .input-search {
   margin-top: 20px;
+  font-size: 18px;
+  min-height: 40px;
+  border: 1px solid var(--dark-gray);
+  border-radius: 8px;
+  padding-left: 10px;
+}
+.input-search:focus {
+  outline-color: var(--khaki-dark);
+  font-size: 18px;
+  color: var(--khaki-dark);
+}
+
+.filter-category,
+.filter-brand{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
 .filter-name {
   font-size: 24px;
-  padding: 10px 0;
+  font-weight: 500;
+  padding: 25px 0 15px 0;
+}
+
+.filter-input{
+  cursor: pointer;
+}
+.filter-label{
+  cursor: pointer;
 }
 
 .filter-range {
@@ -125,6 +158,9 @@ body {
 .sort-menu,
 .sort-menu:focus {
   border: none;
+  outline: none;
+  font-size: 18px;
+  color: var(--khaki-dark);
 }
 
 .view-mode {
@@ -154,6 +190,18 @@ body {
   top: 8%;
   right: 8.5%;
   transform: translate(50%, -50%);
+  z-index: 111;
+  font-size: 18px;
+  line-height: 150%;
+  transition: .3s ease;
+}
+.product-item__stock-wrapper{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 8%;
+  left: 10.7%;
+  transform: translate(-50%, -50%);
   z-index: 111;
   font-size: 18px;
   line-height: 150%;
@@ -298,6 +346,11 @@ body {
   right: 16%;
   font-size: 16px;
 }
+.products-container.active .product-item__stock-wrapper{
+  top: 12.5%;
+  left: 20%;
+  font-size: 16px;
+}
 
 .products-container.active .main-star{
   max-height: 14px;
@@ -355,11 +408,11 @@ body {
   transform: scale(1);
 }
 
-.button-active{
+.drop-active{
   color: var(--main);
   background-color: var(--dark-gray);
 }
-.button-active:hover{
+.drop-active:hover{
   color: var(--fonts);
   background-color: var(--light-gray);
 }
@@ -375,6 +428,6 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(15, 14, 14, 0.75);
+  background-color: rgba(15, 14, 14, 0.6);
   z-index: 400;
 }

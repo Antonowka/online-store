@@ -2,7 +2,7 @@
   <div class="container">
     <div class="section-center">
       <h3>
-        <a href="">Home</a> / Products
+        <a class="home-link" href="">Home</a> / Products
       </h3>
     </div>
   </div>
@@ -12,39 +12,37 @@
     <div class="store-page__wrapper">
       <!-- FILTERS -->
       <div class="filters-container">
-        <div class="input-search">
-          <input type="search" placeholder="Search product" data-search>
-        </div>
+        <input class="input-search" type="search" placeholder="Search product" data-search>
         <!-- Category -->
         <h3 class="filter-name">Category</h3>
         <div class="filter-category">
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="smartphones" value="smartphones">
-            <label for="smartphones">Smartphones</label>
+            <label class="filter-label" for="smartphones">Smartphones</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="laptops" value="laptops">
-            <label for="laptops">Laptops</label>
+            <label class="filter-label" for="laptops">Laptops</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="monitors" value="monitors">
-            <label for="monitors">Monitors</label>
+            <label class="filter-label" for="monitors">Monitors</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="smartwatch" value="smartwatch">
-            <label for="smartwatch">Smartwatch</label>
+            <label class="filter-label" for="smartwatch">Smartwatch</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="tv" value="tv">
-            <label for="tv">TV</label>
+            <label class="filter-label" for="tv">TV</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="tablets" value="tablets">
-            <label for="tablets">Tablets</label>
+            <label class="filter-label" for="tablets">Tablets</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="headphones" value="headphones">
-            <label for="headphones">Headphones</label>
+            <label class="filter-label" for="headphones">Headphones</label>
           </div>
         </div>
         <!-- Brand -->
@@ -52,38 +50,64 @@
         <div class="filter-brand">
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="apple" value="apple">
-            <label for="apple">Apple</label>
+            <label class="filter-label" for="apple">Apple</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="samsung" value="samsung">
-            <label for="samsung">Samsung</label>
+            <label class="filter-label" for="samsung">Samsung</label>
           </div>
           <div class="filter-item">
             <input class="filter-input" type="checkbox" id="xiaomi" value="xiaomi">
-            <label for="xiaomi">Xiaomi</label>
+            <label class="filter-label" for="xiaomi">Xiaomi</label>
+          </div>
+        </div>
+        <!-- Stock -->
+        <h3 class="filter-name">Stock</h3>
+        <div class="multi-range">
+          <div class="wrapper">
+            <div class="stock-input">
+              <div class="field">
+                <span>Min</span>
+                <input type="number" class="input-min" value="0">
+              </div>
+              <div class="separator">-</div>
+              <div class="field">
+                <span>Max</span>
+                <input type="number" class="input-max" value="150">
+              </div>
+            </div>
+            <div class="slider-stock">
+              <div class="progress-stock"></div>
+            </div>
+            <div class="range-input__stock">
+              <input type="range" class="range-min" min="0" max="150" value="0" step="1">
+              <input type="range" class="range-max" min="0" max="150" value="150" step="1">
+            </div>
           </div>
         </div>
         <!-- Price -->
         <h3 class="filter-name">Price</h3>
-        <div class="filter-range">
-          <div class="filter-range-min filter-range-text">0 $</div>
-          <span class="filter-range-line"></span>
-          <div class="filter-range-max filter-range-text">2500 $</div>
-        </div>
         <div class="multi-range">
-          <input class="input-range" type="range" min="0" max="50" class="">
-          <!-- <input type="range" min="0" max="50" class=""> -->
-        </div>
-        <!-- Stock -->
-        <h3 class="filter-name">Stock</h3>
-        <div class="filter-range">
-          <div class="filter-range-min filter-range-text">1</div>
-          <span class="filter-range-line"></span>
-          <div class="filter-range-max filter-range-text">250</div>
-        </div>
-        <div class="multi-range">
-          <input class="input-range" type="range" min="0" max="100" class="">
-          <!-- <input type="range" min="0" max="100" class=""> -->
+          <div class="wrapper">
+            <div class="price-input">
+              <div class="field">
+                <span>Min</span>
+                <input type="number" class="input-min" value="0">
+              </div>
+              <div class="separator">-</div>
+              <div class="field">
+                <span>Max</span>
+                <input type="number" class="input-max" value="2500">
+              </div>
+            </div>
+            <div class="slider-price">
+              <div class="progress-price"></div>
+            </div>
+            <div class="range-input__price">
+              <input type="range" class="range-min" min="0" max="2500" value="0" step="1">
+              <input type="range" class="range-max" min="0" max="2500" value="2500" step="1">
+            </div>
+          </div>
         </div>
         <!-- BUTTONs -->
         <div class="reset-total">
@@ -97,13 +121,13 @@
           <div class="sort-print">
             <h3 class="sort-title">sort by</h3>
             <select class="sort-menu">
-              <option value="sort-option" disabled="" selected="">Sort options:</option>
-              <option value="price-lowest" class="price-lowest">price lowest</option>
-              <option value="price-highest" class="price-highest">price highest</option>
-              <option value="rating-lowest" class="rating-lowest">rating lowest</option>
-              <option value="rating-highest" class="rating-highest">rating highest</option>
-              <option value="name-az" class="name-az">name a-z</option>
-              <option value="name-za" class="name-za">name z-a</option>
+              <option value="sort-option" disabled="" selected="">sort options:</option>
+              <option value="price-asc">price lowest</option>
+              <option value="price-desc">price highest</option>
+              <option value="rating-asc">rating lowest</option>
+              <option value="rating-desc">rating highest</option>
+              <option value="name-asc">name a-z</option>
+              <option value="name-desc">name z-a</option>
             </select>
           </div>
           
@@ -122,13 +146,15 @@
           </div>
         </div>
         <div class="product-list">
-          <div class="products-container"></div>
           <div class="products-container" data-user-cards-container></div>
           <template data-user-template>
             <div class="product-item">
               <div class="product-item__rating-wrapper">
                 <div class="product-item__rating" data-rating></div>
                 <img class="main-star" src="../assets/icons/star.png" alt="star">
+              </div>
+              <div class="product-item__stock-wrapper">
+                <p class="product-item__stock" data-stock></p>
               </div>
               <div class="product-item__info">
                 <h3 class="product-name" data-name></h3>

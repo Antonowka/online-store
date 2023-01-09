@@ -9,7 +9,9 @@ html{
   --dark-gray: #5d5e60;
   --lavander: #d7cfdd;
   --khaki: #7498b1;
+  --khaki-dark: #4d728b;
   --button: #758194;
   --fonts: #2c2c2c;
   --black: #222;
+  --error: #c90000;
 }
