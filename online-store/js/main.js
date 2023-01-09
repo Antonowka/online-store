@@ -1,6 +1,7 @@
 // CREATE products item from products.js
 import updateHeader from './updateCart.js'
 import viewmode from './view-mode.js'
+import dualInputRange from './input-price.js'
 
 const string = (a, b, dir = 1) => a?.localeCompare(b) * dir
 const number = (a, b, dir = 1) => (a - b) * dir
@@ -138,4 +139,5 @@ function createProducts() {
     })
 }
 
-export {createProducts, viewmode}
+
+export {createProducts, viewmode, dualInputRange}

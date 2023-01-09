@@ -62,26 +62,52 @@
           </div>
         </div>
         <!-- Price -->
-        <h3 class="filter-name">Price</h3>
-        <div class="filter-range">
-          <div class="filter-range-min filter-range-text">0 $</div>
-          <span class="filter-range-line"></span>
-          <div class="filter-range-max filter-range-text">2500 $</div>
-        </div>
-        <div class="multi-range">
-          <input class="input-range" type="range" min="0" max="50" class="">
-          <!-- <input type="range" min="0" max="50" class=""> -->
-        </div>
-        <!-- Stock -->
         <h3 class="filter-name">Stock</h3>
-        <div class="filter-range">
-          <div class="filter-range-min filter-range-text">1</div>
-          <span class="filter-range-line"></span>
-          <div class="filter-range-max filter-range-text">250</div>
-        </div>
         <div class="multi-range">
-          <input class="input-range" type="range" min="0" max="100" class="">
-          <!-- <input type="range" min="0" max="100" class=""> -->
+          <div class="wrapper">
+            <div class="stock-input">
+              <div class="field">
+                <span>Min</span>
+                <input type="number" class="input-min" value="0">
+              </div>
+              <div class="separator">-</div>
+              <div class="field">
+                <span>Max</span>
+                <input type="number" class="input-max" value="150">
+              </div>
+            </div>
+            <div class="slider-stock">
+              <div class="progress-stock"></div>
+            </div>
+            <div class="range-input__stock">
+              <input type="range" class="range-min" min="0" max="150" value="0" step="1">
+              <input type="range" class="range-max" min="0" max="150" value="150" step="1">
+            </div>
+          </div>
+        </div>
+        <!-- Price -->
+        <h3 class="filter-name">Price</h3>
+        <div class="multi-range">
+          <div class="wrapper">
+            <div class="price-input">
+              <div class="field">
+                <span>Min</span>
+                <input type="number" class="input-min" value="0">
+              </div>
+              <div class="separator">-</div>
+              <div class="field">
+                <span>Max</span>
+                <input type="number" class="input-max" value="2500">
+              </div>
+            </div>
+            <div class="slider-price">
+              <div class="progress-price"></div>
+            </div>
+            <div class="range-input__price">
+              <input type="range" class="range-min" min="0" max="2500" value="0" step="1">
+              <input type="range" class="range-max" min="0" max="2500" value="2500" step="1">
+            </div>
+          </div>
         </div>
         <!-- BUTTONs -->
         <div class="reset-total">

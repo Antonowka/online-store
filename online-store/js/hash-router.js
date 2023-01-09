@@ -1,5 +1,5 @@
 // <<<---- СЮДА ИМПОРТИМ НАШИ ФАЙЛЫ СКРИПТЫ
-import {createProducts, viewmode} from './main.js';
+import {createProducts, viewmode, dualInputRange} from './main.js';
 import fillDetailPage from './detail.js'
 import fillCartPage from './cart.js'
 // ---->>>
@@ -58,6 +58,7 @@ const locationHandler = async () => {
 	if (location === "/") {
 		createProducts();
     viewmode();
+    dualInputRange();
 	}
 
 	if (location.startsWith("item")) {
