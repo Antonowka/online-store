@@ -194,7 +194,7 @@ function fillCartPage() {
 
     function showModalWindow() {
       transparentModal.style.display = 'block';
-      modalWindow.style.display = 'block';
+      modalWindow.style.display = 'flex';
     }
 
     function closeModalWindow() {

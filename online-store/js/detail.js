@@ -116,7 +116,7 @@ function fillDetailPage() {
     const modalWindow = document.querySelector('.purchase__modal');
 
     transparentModal.style.display = 'block';
-    modalWindow.style.display = 'block';
+    modalWindow.style.display = 'flex';
 
     function closeModalWindow() {
       transparentModal.style.display = 'none';
