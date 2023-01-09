@@ -172,6 +172,10 @@ body {
   margin-bottom: 50px;
 }
 
+.product-list{
+  min-height: 800px;
+}
+
 .products-container {
   display: grid;
   gap: 30px 30px;
