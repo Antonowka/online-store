@@ -9,7 +9,7 @@
 }
 
 .header__wrapper {
-  height: 70px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,6 +29,13 @@
   gap: 40px;
 }
 
+.navbar__link {
+  color: var(--fonts);
+  font-size: 26px;
+  font-weight: 500;
+  transition: .2s;
+}
+
 .cart__wrapper {
   display: flex;
   justify-content: end;
@@ -37,11 +44,14 @@
   width: 250px;
 }
 
-.navbar__link,
 .header__cost,
 .header__count {
   color: var(--fonts);
   font-size: 24px;
+}
+.navbar__link:hover {
+  color: var(--khaki-dark);
+  text-decoration: underline;
 }
 
 .cart__link {

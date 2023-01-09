@@ -32,6 +32,14 @@ body {
   margin-left: 300px;
 }
 
+.home-link{
+  color: var(--khaki-dark);
+  transition: .2s;
+}
+.home-link:hover{
+  text-decoration: underline;
+}
+
 /* left column filters */
 .filters-container {
   position: sticky;
