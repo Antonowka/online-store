@@ -38,6 +38,7 @@
   border: 1px solid var(--gray);
   border-radius: 8px;
   padding-left: 10px;
+  font-size: 18px;
 }
 
 .modal__card__wrapper {
@@ -63,6 +64,7 @@
   background-position: 95% 50%;
   margin: 10px 40px;
   padding-left: 10px;
+  font-size: 18px;
 }
 
 #modal__input__card__date,
@@ -73,6 +75,7 @@
   border: 1px solid var(--gray);
   border-radius: 5px;
   padding-left: 8px;
+  font-size: 16px;
 }
 
 .btn__modal__confirm {
@@ -86,14 +89,22 @@
   color: var(--fonts);
   background: var(--gray);
   cursor: pointer;
-  margin-top: 20px;
+  margin: 20px 0 10px 0;
   transition: .2s;
+  font-size: 18px;
 }
 
 .btn__modal__confirm:hover {
   border: 1px solid var(--dark-gray);
   background: var(--dark-gray);
   color: var(--light-gray);
+  transform: scale(1.05);
+}
+.btn__modal__confirm:active {
+  transform: scale(1);
+  border: 1px solid var(--gray);
+  color: var(--fonts);
+  background: var(--gray);
 }
 
 .modal__input::placeholder {
@@ -111,7 +122,9 @@
 
 .modal__input:focus {
   box-sizing: border-box;
-  outline-color: var(--khaki);
+  outline-color: var(--khaki-dark);
+  font-size: 18px;
+  color: var(--khaki-dark);
 }
 
 .modal__error{
