@@ -95,8 +95,8 @@ function createProducts() {
       }
 
       // SORTING
-      (sorting as HTMLInputElement).addEventListener("change", (event) => {
-        const [sortBy, sortByDirection] = event.target.value.split('-')
+      (sorting as HTMLInputElement).addEventListener("change", (event: Event) => {
+        const [sortBy, sortByDirection] = (event.target as HTMLElement).value.split('-')
 
           const sortFn = sortFnByField[sortBy] ?? sortFnByField.default
           const dir = sortByDirection === 'asc' ? 1 : -1
@@ -110,7 +110,7 @@ function createProducts() {
 
       // search
       (searchInput as HTMLInputElement).addEventListener("input", e => {
-        const value = e.target.value.trim().toLowerCase()
+        const value = (e.target as HTMLElement).value.trim().toLowerCase()
         if (!value) return renderProducts(productsRaw)
 
         const ary = productsRaw.filter(product => product.name.toLowerCase().includes(value))
