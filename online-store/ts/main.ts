@@ -3,18 +3,20 @@ import updateHeader from './updateCart.js'
 import viewmode from './view-mode.js'
 import dualInputRange from './input-dual-range.js'
 
-const string = (a: string, b: string, dir = 1) => a?.localeCompare(b) * dir
-const number = (a: number, b: number, dir = 1) => (a - b) * dir
+const string = (a: string, b: string, dir: number = 1) => a?.localeCompare(b) * dir
+const number = (a: number, b: number, dir: number = 1) => (a - b) * dir
 
 const sortFnByField = {
   default: () => 0,
   price: number,
   rating: number,
   name: string,
+  id: number,
+  stock: number,
 }
 
-let productsRaw = []
-let filteredProducts = []
+let productsRaw: Array<HTMLElement> = []
+let filteredProducts: Array<Element> = []
 
 function createProducts() {
   const userCardTemplate = document.querySelector("[data-user-template]")
@@ -23,12 +25,12 @@ function createProducts() {
   const sorting = document.querySelector('.sort-menu')
   const productContainer = document.querySelector('.products-container')
 
-  function renderProducts(products) {
-    filteredProducts = products
-    productContainer.innerHTML = ''
+  function renderProducts(products: ReadonlyArray<string>) {
+    let filteredProducts = products
+    (productContainer as HTMLElement).innerHTML = ''
 
     filteredProducts.forEach(product => {
-      const card = userCardTemplate.content.cloneNode(true).children[0]
+      const card = (userCardTemplate as HTMLElement).content.cloneNode(true).children[0]
       const info = card.querySelector("[data-name]")
       const cost = card.querySelector("[data-cost]")
       const src = card.querySelector("[data-src]")
@@ -42,7 +44,7 @@ function createProducts() {
       href.href = `#item-${product.id}`;
       rating.innerHTML = product.rating;
       stock.innerHTML = `Stock: ${product.stock}`;
-      userCardContainer.append(card)
+      (userCardContainer as HTMLElement).append(card)
       btn_add.id = `btn-add-${product.id}`;
     })
   }
@@ -55,28 +57,28 @@ function createProducts() {
       renderProducts(productsRaw)
 
       // <<<--- Добавление товара в корзину Добавление товара в корзину --->>>
-      let cartProducts = [];
-
+      let cartProducts: Array<HTMLElement> = [];
+      localStorage:
       if (localStorage.getItem("RS-cart") === null) {
         localStorage.setItem('RS-cart', JSON.stringify([]));
       }
 
-      cartProducts = JSON.parse(localStorage.getItem("RS-cart"));
+      cartProducts = JSON.parse(localStorage.getItem("RS-cart") || '');
 
       for (let i = 0; i < cartProducts.length; i++) {
-        document.getElementById(`btn-add-${cartProducts[i].id}`).innerHTML = 'Drob item';
-        document.getElementById(`btn-add-${cartProducts[i].id}`).classList.toggle("drop-active");
+        (document.getElementById(`btn-add-${cartProducts[i].id}`) as HTMLElement).innerHTML = 'Drob item';
+        (document.getElementById(`btn-add-${cartProducts[i].id}`) as HTMLElement).classList.toggle("drop-active");
       }
 
       for (let i = 0; i < productsRaw.length; i++) {
         document.querySelectorAll('.button__add')[i].addEventListener('click', addToCart);
       }
 
-      function addToCart(e) {
-        const item_id = parseInt(e.currentTarget.id.slice(8), 10);
-        if (document.getElementById(`btn-add-${item_id}`).innerHTML === "Add to cart") {
-          document.getElementById(`btn-add-${item_id}`).innerHTML = "Drop item";
-          document.getElementById(`btn-add-${item_id}`).classList.toggle("drop-active");
+      function addToCart(e: Event) {
+        const item_id = parseInt((e.currentTarget as HTMLElement).id.slice(8), 10);
+        if ((document.getElementById(`btn-add-${item_id}`) as HTMLElement).innerHTML === "Add to cart") {
+          (document.getElementById(`btn-add-${item_id}`) as HTMLElement).innerHTML = "Drop item";
+          (document.getElementById(`btn-add-${item_id}`) as HTMLElement).classList.toggle("drop-active");
           cartProducts.push({
             id: item_id,
             count: 1,
@@ -84,16 +86,16 @@ function createProducts() {
           })
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
         } else {
-          document.getElementById(`btn-add-${item_id}`).innerHTML = "Add to cart";
-          cartProducts = cartProducts.filter(value => value.id != item_id)
+          (document.getElementById(`btn-add-${item_id}`) as HTMLElement).innerHTML = "Add to cart";
+          cartProducts = cartProducts.filter((value: { id: number; }) => value.id != item_id)
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
-          document.getElementById(`btn-add-${item_id}`).classList.remove("drop-active");
+          (document.getElementById(`btn-add-${item_id}`) as HTMLElement).classList.remove("drop-active");
         }
         updateHeader()
       }
 
       // SORTING
-      sorting.addEventListener("change", (event) => {
+      (sorting as HTMLInputElement).addEventListener("change", (event) => {
         const [sortBy, sortByDirection] = event.target.value.split('-')
 
           const sortFn = sortFnByField[sortBy] ?? sortFnByField.default
@@ -107,7 +109,7 @@ function createProducts() {
       });
 
       // search
-      searchInput.addEventListener("input", e => {
+      (searchInput as HTMLInputElement).addEventListener("input", e => {
         const value = e.target.value.trim().toLowerCase()
         if (!value) return renderProducts(productsRaw)
 
