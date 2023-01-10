@@ -3,7 +3,7 @@ import updateHeader from './updateCart.js'
 import viewmode from './view-mode.js'
 import dualInputRange from './input-dual-range.js'
 
-const string = (a: string, b: string, dir: number = 1) => a?.localeCompare(b) * dir
+const string = (a: string, b: string, dir: number = 1): string | number => a?.localeCompare(b) * dir
 const number = (a: number, b: number, dir: number = 1) => (a - b) * dir
 
 const sortFnByField = {
@@ -95,8 +95,8 @@ function createProducts() {
       }
 
       // SORTING
-      (sorting as HTMLInputElement).addEventListener("change", (event: Event) => {
-        const [sortBy, sortByDirection] = (event.target as HTMLElement).value.split('-')
+      (sorting as HTMLSelectElement).addEventListener("change", (event: Event) => {
+        const [sortBy, sortByDirection] = ((event.target as HTMLSelectElement).value).split('-')
 
           const sortFn = sortFnByField[sortBy] ?? sortFnByField.default
           const dir = sortByDirection === 'asc' ? 1 : -1
@@ -110,7 +110,7 @@ function createProducts() {
 
       // search
       (searchInput as HTMLInputElement).addEventListener("input", e => {
-        const value = (e.target as HTMLElement).value.trim().toLowerCase()
+        const value = ((e.target as HTMLInputElement).value).trim().toLowerCase()
         if (!value) return renderProducts(productsRaw)
 
         const ary = productsRaw.filter(product => product.name.toLowerCase().includes(value))
