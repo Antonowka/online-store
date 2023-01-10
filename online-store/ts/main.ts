@@ -1,7 +1,7 @@
 // CREATE products item from products.js
-import updateHeader from './updateCart.js'
-import viewmode from './view-mode.js'
-import dualInputRange from './input-dual-range.js'
+import updateHeader from './updateCart'
+import viewmode from './view-mode'
+import dualInputRange from './input-dual-range'
 
 const string = (a: string, b: string, dir: number = 1): string | number => a?.localeCompare(b) * dir
 const number = (a: number, b: number, dir: number = 1) => (a - b) * dir
@@ -17,6 +17,14 @@ const sortFnByField = {
 
 let productsRaw: Array<HTMLElement> = []
 let filteredProducts: Array<Element> = []
+type IProduct = {
+  name: string;
+  price: number;
+  thumbnail: string;
+  id: number;
+  rating: string;
+  stock: number;
+}
 
 function createProducts() {
   const userCardTemplate = document.querySelector("[data-user-template]")
@@ -25,36 +33,35 @@ function createProducts() {
   const sorting = document.querySelector('.sort-menu')
   const productContainer = document.querySelector('.products-container')
 
-  function renderProducts(products: ReadonlyArray<string>) {
-    let filteredProducts = products
+  function renderProducts(products: Array<IProduct>) {
+    let filteredProducts = products;
     (productContainer as HTMLElement).innerHTML = ''
 
-    filteredProducts.forEach(product => {
-      const card = (userCardTemplate as HTMLElement).content.cloneNode(true).children[0]
-      const info = card.querySelector("[data-name]")
-      const cost = card.querySelector("[data-cost]")
-      const src = card.querySelector("[data-src]")
-      const href = card.querySelector("[data-href]")
-      const btn_add = card.querySelector("[data-btn-add]")
-      const rating = card.querySelector("[data-rating]")
-      const stock = card.querySelector("[data-stock]")
-      info.textContent = product.name
-      cost.innerHTML = product.price + ' $';
-      src.src = product.thumbnail;
-      href.href = `#item-${product.id}`;
-      rating.innerHTML = product.rating;
-      stock.innerHTML = `Stock: ${product.stock}`;
-      (userCardContainer as HTMLElement).append(card)
-      btn_add.id = `btn-add-${product.id}`;
+    filteredProducts.forEach((product: IProduct) => {
+      const card = ((userCardTemplate as HTMLTemplateElement).content.cloneNode(true) as HTMLElement).children[0];
+      const info = card.querySelector("[data-name]");
+      const cost = card.querySelector("[data-cost]");
+      const src = card.querySelector("[data-src]");
+      const href = card.querySelector("[data-href]");
+      const btn_add = card.querySelector("[data-btn-add]");
+      const rating = card.querySelector("[data-rating]");
+      const stock = card.querySelector("[data-stock]");
+      (info as HTMLElement).textContent = product.name;
+      (cost as HTMLElement).innerHTML = product.price + ' $';
+      (src as HTMLImageElement).src = product.thumbnail;
+      (href as HTMLAnchorElement).href = `#item-${product.id}`;
+      (rating as HTMLElement).innerHTML = product.rating;
+      (stock as HTMLElement).innerHTML = `Stock: ${product.stock}`;
+      (userCardContainer as HTMLElement).append(card);
+      (btn_add as HTMLElement).id = `btn-add-${product.id}`;
     })
   }
 
-
   fetch('../js/products.json')
     .then(res => res.json())
-    .then(data => {
-      productsRaw = data
-      renderProducts(productsRaw)
+    .then((data: IProduct) => {
+      (productsRaw as unknown as IProduct) = data
+      renderProducts((productsRaw as unknown as Array<IProduct>))
 
       // <<<--- Добавление товара в корзину Добавление товара в корзину --->>>
       let cartProducts: Array<HTMLElement> = [];
@@ -105,25 +112,25 @@ function createProducts() {
             return sortFn(a[sortBy], b[sortBy], dir)
           })
 
-          renderProducts(ary)
+          renderProducts((ary as unknown as Array<IProduct>))
       });
 
       // search
       (searchInput as HTMLInputElement).addEventListener("input", e => {
         const value = ((e.target as HTMLInputElement).value).trim().toLowerCase()
-        if (!value) return renderProducts(productsRaw)
+        if (!value) return renderProducts((productsRaw as unknown as Array<IProduct>))
 
-        const ary = productsRaw.filter(product => product.name.toLowerCase().includes(value))
-        renderProducts(ary)
+        const ary = productsRaw.filter(product => (product as unknown as IProduct).name.toLowerCase().includes(value))
+        renderProducts((ary as unknown as Array<IProduct>))
       })
 
       // filter
       const checkboxes = document.querySelectorAll('.filter-input')
       checkboxes.forEach(checkbox => {
         checkbox.addEventListener('click', () => {
-          const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked)
+          const checked = Array.from(checkboxes).filter(checkbox => (checkbox as HTMLInputElement).checked)
 
-          if (!checked.length) return renderProducts(productsRaw)
+          if (!checked.length) return renderProducts((productsRaw as unknown as Array<IProduct>))
 
           const filters = checked.reduce((acc, curr) => {
               if (!acc[curr.dataset.filter]) {
@@ -140,7 +147,7 @@ function createProducts() {
               return filters[filter].includes(product[filter])
             })
           })
-          renderProducts(ary)
+          renderProducts((ary as unknown as Array<IProduct>))
         })
       })
     })
