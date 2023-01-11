@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prettier/prettier */
 // <<<---- СЮДА ИМПОРТИМ НАШИ ФАЙЛЫ СКРИПТЫ
 import {createProducts, viewmode, dualInputRange} from './main';
 import fillDetailPage from './detail'
@@ -29,8 +31,8 @@ const items: ItemTypes = {
 }
 
 for (let i = 0; i < products.length; i++) {
-	var key = 'item-' + products[i].id;
-	var value = {
+	let key = 'item-' + products[i].id;
+	let value = {
 		template: "./templates/temp-page-detail.html",
 		title: "Item | " + pageTitle,
 	};
@@ -57,7 +59,7 @@ Object.assign(routes, items)
 
 
 const locationHandler = async () => {
-	var location = window.location.hash.replace("#", "");
+	let location = window.location.hash.replace("#", "");
 	location = location.split('?')[0];
 
 	if (location.length == 0) {

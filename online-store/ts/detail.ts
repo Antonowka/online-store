@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prettier/prettier */
 import myJson from './products.json' assert {
   type: 'json'
 };

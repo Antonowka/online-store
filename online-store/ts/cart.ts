@@ -1,3 +1,6 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable prefer-const */
+/* eslint-disable prettier/prettier */
 import myJson from './products.json' assert {
   type: 'json'
 };
@@ -151,7 +154,7 @@ function fillCartPage() {
       updateCart()
 
     } else {
-      newArray = cartProducts.map((i: { id: number; count: number; price: any; }) => {
+      newArray = cartProducts.map((i: { id: number; count: number; price: number; }) => {
         const container: LocalStorageType = {
           count: 0,
           id: 0,
@@ -183,8 +186,8 @@ function fillCartPage() {
   }
 
   function updateCount() {
-    var sumCount = 0;
-    var sumPrice = 0;
+    let sumCount = 0;
+    let sumPrice = 0;
     for (let i = 0; i < cartProducts.length; i++) {
       document.querySelectorAll('.cart__prouducts__list__count__items__sum')[i].innerHTML = cartProducts[i].count;
       document.querySelectorAll('.cart__prouducts__list__count__sum')[i].innerHTML = `${myJson[cartProducts[i].id-1].price * cartProducts[i].count}$`;
