@@ -3,7 +3,7 @@ import updateHeader from './updateCart'
 import viewmode from './view-mode'
 import dualInputRange from './input-dual-range'
 
-const string = (a: string, b: string, dir: number = 1): string | number => a?.localeCompare(b) * dir
+const string = (a: string, b: string, dir: number ): string | number | boolean => a?.localeCompare(b) * dir
 const number = (a: number, b: number, dir: number = 1) => (a - b) * dir
 
 const sortFnByField = {
@@ -33,7 +33,7 @@ function createProducts() {
   const sorting = document.querySelector('.sort-menu')
   const productContainer = document.querySelector('.products-container')
 
-  function renderProducts(products: Array<IProduct>) {
+  function renderProducts(products: Array<IProduct>): void {
     let filteredProducts = products;
     (productContainer as HTMLElement).innerHTML = ''
 
@@ -81,20 +81,20 @@ function createProducts() {
         document.querySelectorAll('.button__add')[i].addEventListener('click', addToCart);
       }
 
-      function addToCart(e: Event) {
+      function addToCart(e: Event): void {
         const item_id = parseInt((e.currentTarget as HTMLElement).id.slice(8), 10);
         if ((document.getElementById(`btn-add-${item_id}`) as HTMLElement).innerHTML === "Add to cart") {
           (document.getElementById(`btn-add-${item_id}`) as HTMLElement).innerHTML = "Drop item";
           (document.getElementById(`btn-add-${item_id}`) as HTMLElement).classList.toggle("drop-active");
           cartProducts.push({
-            id: item_id,
+            id: (item_id as unknown as string),
             count: 1,
             price: data[item_id - 1].price
           })
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
         } else {
           (document.getElementById(`btn-add-${item_id}`) as HTMLElement).innerHTML = "Add to cart";
-          cartProducts = cartProducts.filter((value: { id: number; }) => value.id != item_id)
+          cartProducts = cartProducts.filter((value: { id: unknown | number; }) => value.id != item_id)
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
           (document.getElementById(`btn-add-${item_id}`) as HTMLElement).classList.remove("drop-active");
         }
@@ -105,11 +105,11 @@ function createProducts() {
       (sorting as HTMLSelectElement).addEventListener("change", (event: Event) => {
         const [sortBy, sortByDirection] = ((event.target as HTMLSelectElement).value).split('-')
 
-          const sortFn = sortFnByField[sortBy] ?? sortFnByField.default
-          const dir = sortByDirection === 'asc' ? 1 : -1
+          const sortFn: any = (sortFnByField as unknown as string)[(sortBy as unknown as number)] ?? sortFnByField.default
+          const dir: any = sortByDirection === 'asc' ? 1 : -1
 
           const ary = filteredProducts.sort((a, b) => {
-            return sortFn(a[sortBy], b[sortBy], dir)
+            return sortFn((a as unknown as string)[(sortBy as unknown as number)], (b as unknown as string)[(sortBy  as unknown as number)], dir)
           })
 
           renderProducts((ary as unknown as Array<IProduct>))
@@ -131,20 +131,19 @@ function createProducts() {
           const checked = Array.from(checkboxes).filter(checkbox => (checkbox as HTMLInputElement).checked)
 
           if (!checked.length) return renderProducts((productsRaw as unknown as Array<IProduct>))
-
           const filters = checked.reduce((acc, curr) => {
               if (!acc[curr.dataset.filter]) {
-                acc[curr.dataset.filter] = []
+                acc[(curr as HTMLElement).dataset.filter] = []
               }
 
-              acc[curr.dataset.filter].push(curr.value)
+              acc[(curr as HTMLElement).dataset.filter].push((curr as unknown as HTMLElement)).value
 
               return acc
-          }, {})
-
-          const ary = productsRaw.filter(product => {
+          }, ({} as unknown as string))
+          
+          const ary: HTMLElement[] = productsRaw.filter(product => {
             return Object.keys(filters).every(filter => {
-              return filters[filter].includes(product[filter])
+              return (filters as string)[(filter as unknown as number)].includes((product as unknown as string)[(filter as unknown as number)])
             })
           })
           renderProducts((ary as unknown as Array<IProduct>))
