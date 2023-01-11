@@ -64,13 +64,13 @@ function createProducts() {
       renderProducts((productsRaw as unknown as Array<IProduct>))
 
       // <<<--- Добавление товара в корзину Добавление товара в корзину --->>>
-      let cartProducts: Array<HTMLElement> = [];
+      // let cartProducts: Array<HTMLElement> = [];
       localStorage:
       if (localStorage.getItem("RS-cart") === null) {
         localStorage.setItem('RS-cart', JSON.stringify([]));
       }
 
-      cartProducts = JSON.parse(localStorage.getItem("RS-cart") || '');
+      let cartProducts = JSON.parse(localStorage.getItem("RS-cart") || '');
 
       for (let i = 0; i < cartProducts.length; i++) {
         (document.getElementById(`btn-add-${cartProducts[i].id}`) as HTMLElement).innerHTML = 'Drob item';
@@ -89,7 +89,7 @@ function createProducts() {
           cartProducts.push({
             id: (item_id as unknown as string),
             count: 1,
-            price: data[item_id - 1].price
+            price: ((data as unknown as Array<number>)[item_id - 1] as unknown as IProduct).price
           })
           localStorage.setItem('RS-cart', JSON.stringify(cartProducts));
         } else {
@@ -124,6 +124,14 @@ function createProducts() {
         renderProducts((ary as unknown as Array<IProduct>))
       })
 
+      type IFilters = {
+        brand?: Array<string>;
+        category?: Array<string>;
+      }
+
+      type IFilterDom = {
+        filter: string;
+      }
       // filter
       const checkboxes = document.querySelectorAll('.filter-input')
       checkboxes.forEach(checkbox => {
@@ -132,18 +140,18 @@ function createProducts() {
 
           if (!checked.length) return renderProducts((productsRaw as unknown as Array<IProduct>))
           const filters = checked.reduce((acc, curr) => {
-              if (!acc[curr.dataset.filter]) {
-                acc[(curr as HTMLElement).dataset.filter] = []
+              if (!acc[(curr as HTMLInputElement).dataset.filter]) {
+                acc[(curr as HTMLInputElement).dataset.filter] = []
               }
 
-              acc[(curr as HTMLElement).dataset.filter].push((curr as unknown as HTMLElement)).value
+              acc[(curr as HTMLInputElement).dataset.filter].push(curr).value;
 
               return acc
-          }, ({} as unknown as string))
-          
+          }, {});
+
           const ary: HTMLElement[] = productsRaw.filter(product => {
             return Object.keys(filters).every(filter => {
-              return (filters as string)[(filter as unknown as number)].includes((product as unknown as string)[(filter as unknown as number)])
+              return (filters as unknown as string)[(filter as unknown as number)].includes((product as unknown as string)[(filter as unknown as number)])
             })
           })
           renderProducts((ary as unknown as Array<IProduct>))
