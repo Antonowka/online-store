@@ -1,0 +1,516 @@
+[
+  {
+    "id": 1,
+    "name": "MacBook Pro",
+    "description": "This is the most powerful MacBook Pro ever. Its lightning-fast M1 Pro or M1 Max chips – Apple's first chips designed specifically for professionals-deliver revolutionary speed and breakthrough battery performance. Add a Liquid Retina XDR display, camera and audio like no other mobile Mac has ever had, and a set of ports. This is a notebook with absolutely unprecedented power. A real beast. Now you can only repeat it.",
+    "price": 2449,
+    "discountPercentage": 12.5,
+    "rating": 4.93,
+    "stock": 14,
+    "brand": "apple",
+    "category": "laptops",
+    "thumbnail": "../assets/images/products/apple/mac/31jA5LDJdoL._AC_SY780_.jpg",
+    "images": [
+      "../assets/images/products/Apple/mac/31jA5LDJdoL._AC_SY780_.jpg",
+      "../assets/images/products/Apple/mac/apple-macbook-pro-13-m1-8gb-256gb-ssd-laptop.jpg",
+      "../assets/images/products/Apple/mac/hero_intro_endframe__e6khcva4hkeq_large.jpg",
+      "../assets/images/products/Apple/mac/keyboard__0zc8gxnp2gy2_large.jpg",
+      "../assets/images/products/Apple/mac/side_right__s9xdj737o2ai_large.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "SAMSUNG Smart M7",
+    "description": "Watch, play and work in the best style. A Smart Monitor has everything you need. You don't even have to turn on the computer. Your favorite content, productivity apps, and how to stay in touch with your co-workers and friends are all built into your device. Less configuration and hardware needed on your desk to make every M7 turn-on a pleasure.",
+    "price": 599,
+    "discountPercentage": 17.5,
+    "rating": 4.69,
+    "stock": 39,
+    "brand": "samsung",
+    "category": "monitors",
+    "thumbnail": "../assets/images/products/sumsung/monik/Monitor-SAMSUNG-Smart-M7-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/monik/Monitor-SAMSUNG-Smart-M7-0.jpg",
+      "https://i.dummyjson.com/data/products/2/1.jpg",
+      "https://i.dummyjson.com/data/products/2/2.jpg",
+      "https://i.dummyjson.com/data/products/2/3.jpg",
+      "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "SAMSUNG galaxy buds",
+    "description": "Immerse yourself in the music. Reduce ambient noise by up to 99%. Galaxy Buds Pro is an In-Ear headset that not only physically isolates you from external noise (passive noise reduction), but also minimizes it with Active Noise Reduction (ANC). This is a much more effective solution compared to open headphones. With two levels of ANC, you can also adjust noise reduction to the situation and location you are in.",
+    "price": 149,
+    "discountPercentage": 15.5,
+    "rating": 4.60,
+    "stock": 36,
+    "brand": "samsung",
+    "category": "headphones",
+    "thumbnail": "../assets/images/products/sumsung/naushniki/samsung-galaxy-buds-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/naushniki/samsung-galaxy-buds-0.jpg",
+      "../assets/images/products/sumsung/naushniki/samsung-galaxy-buds-1.jpg",
+      "../assets/images/products/sumsung/naushniki/samsung-galaxy-buds-2.jpg",
+      "../assets/images/products/sumsung/naushniki/samsung-galaxy-buds-3.jpg",
+      "../assets/images/products/sumsung/naushniki/samsung-galaxy-buds-4.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "iPhone 14",
+    "description": "Protection of the environment by Apple. To achieve the goal of carbon neutrality by 2030, the iPhone 14 and iPhone 14 Plus are sold without a power supply and EarPods. In the box you will find a USB-C to Lightning fast charging cable compatible with USB-C power supplies and ports in computers.We encourage you to use USB to Lightning cables, power supplies and headphones that you already have that are compatible with these iPhone models. however, if you need a new power supply or new headphones from Apple, you can buy them.",
+    "price": 1280,
+    "discountPercentage": 17.5,
+    "rating": 4.83,
+    "stock": 67,
+    "brand": "apple",
+    "category": "smartphones",
+    "thumbnail": "../assets/images/products/apple/tel/iphone-14-finish-select-202209-6-7inch_AV1.jpg",
+    "images": [
+      "../assets/images/products/Apple/tel/iphone-14-finish-select-202209-6-7inch_AV1.jpg",
+      "../assets/images/products/Apple/tel/iphone-14-0.jpg",
+      "../assets/images/products/Apple/tel/iphone-14-finish-select-202209-6-7inch_AV2_GEO_EMEA.jpg",
+      "../assets/images/products/Apple/tel/iphone-14-finish-select-202209-6-7inch_AV3.jpg",
+      "../assets/images/products/Apple/tel/iphone-14-finish-select-202209-6-7inch_GEO_EMEA.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "SAMSUNG Odyssey",
+    "description": "Monitor Samsung Odyssey G5 will allow you to immerse yourself in an extremely immersive picture of the game world. It delivers extraordinary realism and dynamic gameplay to allow you to experience the gameplay at the highest level of the world.",
+    "price": 499,
+    "discountPercentage": 11,
+    "rating": 4.09,
+    "stock": 21,
+    "brand": "samsung",
+    "category": "monitors",
+    "thumbnail": "../assets/images/products/sumsung/monik2/Monitor-SAMSUNG-Odyssey-G5-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/monik2/Monitor-SAMSUNG-Odyssey-G5-0.jpg",
+      "../assets/images/products/sumsung/monik2/Monitor-SAMSUNG-Odyssey-G5-1.jpg",
+      "../assets/images/products/sumsung/monik2/Monitor-SAMSUNG-Odyssey-G5-2.jpg",
+      "../assets/images/products/sumsung/monik2/Monitor-SAMSUNG-Odyssey-G5-3.jpg",
+      "../assets/images/products/sumsung/monik2/Monitor-SAMSUNG-Odyssey-G5-4.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "SAMSUNG Galaxy S20FE",
+    "description": "Galaxy S20 FE 5G is the latest smartphone in the cult series, which was created to respond to fans around the world. The Fan Edition lets you do what you love every day. With its 4 unique colors (blue, green, pink or red*), you stand out from the crowd, and the matte finish of the case will make it more pleasant to use. It is made of reinforced polycarbonate, therefore, in addition to aesthetic qualities, it is also extremely durable. Take it with you wherever you go and you will definitely create a great duo!",
+    "price": 449,
+    "discountPercentage": 12,
+    "rating": 4.51,
+    "stock": 51,
+    "brand": "samsung",
+    "category": "smartphones",
+    "thumbnail": "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS20FE/Smartwatch-SAMSUNG-2.jpg",
+    "images": [
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS20FE/Smartwatch-SAMSUNG-2.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS20FE/Smartwatch-SAMSUNG-0.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS20FE/Smartwatch-SAMSUNG-1.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS20FE/Smartwatch-SAMSUNG-Galaxyhh5454-Watch-5-22Pro-Czarny-06.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS20FE/Smartwatch-SAMSUNG-Galaxyhh5454-Watch-5-Pro-Czarny-06.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "XIAOMI Pad",
+    "description": "A versatile tool for work. XIAOMI Pad 5 is a tablet that, depending on your needs, can act as both a work tool and an entertainment device. Whether you're at home or at the office, its productivity-enhancing features will ensure you're always ready to go. With built-in Blue Light Reduction technology and True Display, the tablet will provide a safe and comfortable viewing experience, minimizing eye fatigue that can result from prolonged screen staring.",
+    "price": 349,
+    "discountPercentage": 13,
+    "rating": 4.55,
+    "stock": 54,
+    "brand": "xiaomi",
+    "category": "tablets",
+    "thumbnail": "../assets/images/products/xiaomi/tablet/Tablet-XIAOMI-Pad-5-01.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/tablet/Tablet-XIAOMI-Pad-5-01.jpg",
+      "../assets/images/products/xiaomi/tablet/Tablet-XIAOMI-Pad-5-02.jpg",
+      "../assets/images/products/xiaomi/tablet/Tablet-XIAOMI-Pad-5-04.jpg",
+      "../assets/images/products/xiaomi/tablet/Tablet-XIAOMI-Pad-5-05.jpg",
+      "../assets/images/products/xiaomi/tablet/Tablet-XIAOMI-Pad-5-06.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Xiaomi Watch 2",
+    "description": "Sports watch in an elegant edition, ideal for training and business meetings. 1.43  AMOLED display, contactless payments, dual-band GPS, Bluetooth ® phone connections, 117 fitness modes, heart rate and SpO2",
+    "price": 249,
+    "discountPercentage": 17,
+    "rating": 4.77,
+    "stock": 23,
+    "brand": "xiaomi",
+    "category": "smartwatch",
+    "thumbnail": "../assets/images/products/xiaomi/watch/pol_pl_Zegarek-Smartwach-Xiaomi-Watch-S1-Black-1888_4-min.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/watch/pol_pl_Zegarek-Smartwach-Xiaomi-Watch-S1-Black-1888_4-min.jpg",
+      "../assets/images/products/xiaomi/watch/pol_pl_Zegarek-Smartwach-Xia2omi-Watch-S1-Black-1888_4-min.jpg",
+      "../assets/images/products/xiaomi/watch/xiaomi-mi-watch-s1-active-space-black,102608683217_8-min.jpg",
+      "../assets/images/products/xiaomi/watch/Xiaomi-Watch-S1-10-min.jpg",
+      "../assets/images/products/xiaomi/watch/Xiaomi-Watch2-S1-10-min.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Apple PRO Display",
+    "description": "The first ever 32-inch Retina 6K display offers a screen brightness of up to 1,600 nits, an incredible 1,000,000:1 contrast ratio and a super-wide viewing angle. It reproduces more than a billion colors with incredible accuracy, and its wide dynamic range will completely change the way professionals work. Introducing the Apple Pro Display XDR. The most advanced professional display in the world.",
+    "price": 2399,
+    "discountPercentage": 10,
+    "rating": 4.97,
+    "stock": 93,
+    "brand": "apple",
+    "category": "monitors",
+    "thumbnail": "../assets/images/products/apple/monik/set-up-pro-display-xdr-hero.jpg",
+    "images": [
+      "../assets/images/products/apple/monik/set-up-pro-display-xdr-hero.jpg",
+      "../assets/images/products/apple/monik/391531.jpg",
+      "../assets/images/products/apple/monik/Apple-MWUG2DA-30196597-01.jpg",
+      "../assets/images/products/apple/monik/set-up-pro-display-xdr-hero2.jpg",
+      "../assets/images/products/apple/monik/appleprodisplayxdrwithstandmb3dmodel001.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "APPLE Airpod Max",
+    "description": "Meet Apple airports Max-Wireless In-Ear headphones that are the perfect combination of excellent sound and simple, intuitive solutions. The design of the headphones not only looks great, but also offers a perfect fit for different head shapes. Get ready for the surround sound that surrounds you like in a movie. You'll experience an unmatched acoustic experience that combines hi-fi sounds with top-notch active noise reduction. Here, every sound, from deep bass to crystal clear top, gains in clarity. With the Digital Crown knob, you'll be able to conveniently adjust the volume, switch tracks, and answer calls. Convenience and freedom of use thanks to a thoughtful design and reliable wireless connectivity combined with up to 20 hours of Operation time on a single charge make AirPods Max unmatched. The included Smart Case also protects the battery when the headphones go into ultra-low power mode.",
+    "price": 849,
+    "discountPercentage": 15,
+    "rating": 4.71,
+    "stock": 53,
+    "brand": "apple",
+    "category": "headphones",
+    "thumbnail": "../assets/images/products/apple/naushniki/airpodsmax3_832092006.jpg",
+    "images": [
+      "../assets/images/products/apple/naushniki/airpodsmax3_832092006.jpg",
+      "../assets/images/products/apple/naushniki/airpod-max-202011-gallery-1.jpg",
+      "../assets/images/products/apple/naushniki/airpod-max-202011-gallery-2.jpg",
+      "../assets/images/products/apple/naushniki/airpod-max-202011-gallery-4.jpg",
+      "../assets/images/products/apple/naushniki/airpods-max-select-spacegray-202011.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "APPLE iPad",
+    "description": "Meet the 10th generation iPad! iPad in a new, colorful release is even more functional, intuitive and even more fun. It has a new, edge-to-edge 10.9-inch Liquid Retina display, is available in four beautiful colors to choose from and has a whole host of powerful features to work with, Create and connect with the world. Add in the fantastic iPad 10 Gen accessories and do whatever you like, as long as you like.",
+    "price": 1219,
+    "discountPercentage": 14,
+    "rating": 4.78,
+    "stock": 83,
+    "brand": "apple",
+    "category": "tablets",
+    "thumbnail": "../assets/images/products/apple/tablet/APPLE-iPad-10-2-frontowe.jpg",
+    "images": [
+      "../assets/images/products/apple/tablet/APPLE-iPad-10-2-frontowe.jpg",
+      "../assets/images/products/apple/tablet/hero__ecv967jz1y82_large.jpg",
+      "../assets/images/products/apple/tablet/ipad-10th-gen-finish-unselect-gallery-2-202212.jpg",
+      "../assets/images/products/apple/tablet/ipad-10th-gen-finish-unselect-gallery-3-2022112.jpg",
+      "../assets/images/products/apple/tablet/ipad-10th-gen-finish-unselect-gallery-3-202212.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "APPLE iPhone 12",
+    "description": "To achieve carbon neutrality by 2030, we're selling the iPhone 12 without the power supply and EarPods. In the box you will find a USB-C to Lightning fast charging cable compatible with USB-C power supplies and ports in computers.",
+    "price": 1140,
+    "discountPercentage": 18,
+    "rating": 4.85,
+    "stock": 33,
+    "brand": "apple",
+    "category": "smartphones",
+    "thumbnail": "../assets/images/products/apple/tel2/APPLE-iPhone-12-Czarny-Front.jpg",
+    "images": [
+      "../assets/images/products/apple/tel2/APPLE-iPhone-12-Czarny-Front.jpg",
+      "../assets/images/products/apple/tel2/iphone-12-finish-unselect-gallery-1-202207_GEO_EMEA.jpg",
+      "../assets/images/products/apple/tel2/iphone-12-finish-unselect-gallery-2-202207.jpg",
+      "../assets/images/products/apple/tel2/iphone-12-finish-unselect-gallery-3-202207_GEO_EMEA.jpg",
+      "../assets/images/products/apple/tel2/iphone-12-finish-unselect-gallery-4-202207.jpg"    
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Apple watch ultra",
+    "description": "The latest Apple Watch Ultra is a unique device that will completely change the way you use your smartphone with the Apple logo. The large titanium case, IPX 64 certification and battery life of up to 36 hours make the watch ideal for an active person looking for the highest quality products.49 mm case-enjoy good visibility and the brightest display in Apple Watch's history durability-the watch is IPX 64 certified (-20°C to 55°C)",
+    "price": 1385,
+    "discountPercentage": 17,
+    "rating": 4.89,
+    "stock": 43,
+    "brand": "apple",
+    "category": "smartwatch",
+    "thumbnail": "../assets/images/products/apple/watch/MQE53ref_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-alpine-ultra_VW_34FR_WF_CO.jpg",
+    "images": [
+      "../assets/images/products/apple/watch/MQE53ref_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-alpine-ultra_VW_34FR_WF_CO.jpg",    
+      "../assets/images/products/apple/watch/1-etui-tech-protect-defense360-do-apple-watch-ultra-49-mm-srebrny-front-bok-1.jpg",    
+      "../assets/images/products/apple/watch/apple-apple-watch-ultra-49-ti-orange-alp-m-pro,111563511321_8.jpg",    
+      "../assets/images/products/apple/watch/MQE53ref.jpg",    
+      "../assets/images/products/apple/watch/MQE53ref_VW_PF+watch-49-titanium-ultra_VW_PF_WF_CO+watch-face-49-alpine-ultra_VW_PF_WF_CO.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "XIAOMI RedmiBook 14",
+    "description": "The ultra-thin design of the Mi RedmiBook 14 is comparable in size to a regular notebook, so the laptop will easily keep you Company on any trip. A powerful battery, state-of-the-art equipment, an advanced cooling system and a bright display allow you to use your laptop for everything from working on professional projects to playing games and watching movies.",
+    "price": 919,
+    "discountPercentage": 13,
+    "rating": 4.58,
+    "stock": 26,
+    "brand": "xiaomi",
+    "category": "laptops",
+    "thumbnail": "../assets/images/products/xiaomi/laptopXiaomi_RedmiBook14/165748.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/laptopXiaomi_RedmiBook14/165748.jpg",
+      "../assets/images/products/xiaomi/laptopXiaomi_RedmiBook14/165750.jpg",
+      "../assets/images/products/xiaomi/laptopXiaomi_RedmiBook14/165751.jpg",
+      "../assets/images/products/xiaomi/laptopXiaomi_RedmiBook14/165753.jpg",
+      "../assets/images/products/xiaomi/laptopXiaomi_RedmiBook14/165758.jpg"
+
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Xiaomi Mi Band 7 Pro",
+    "description": "Slim, aesthetic, comfortable. Massive, rectangular AMOLED display with a diagonal of 1.64'. For the first time, the wristband has a large, full-color, rectangular display. The layout of all functions is similar to that on the smartphone screen. Text and icons have more space, which makes them much easier to use. Xiaomi Smart Band 7 Pro can be considered as a comfortable extension of the smartphone.",
+    "price": 199,
+    "discountPercentage": 11,
+    "rating": 4.59,
+    "stock": 106,
+    "brand": "xiaomi",
+    "category": "smartwatch",
+    "thumbnail": "../assets/images/products/xiaomi/miband/pol_pl_Smartband-Xiaomi-Smart-Mi-Band-7-Pro-White-2174_2.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/miband/pol_pl_Smartband-Xiaomi-Smart-Mi-Band-7-Pro-White-2174_2.jpg",
+      "../assets/images/products/xiaomi/miband/098bdbce6658ab1f9ec83cdfea764a0b.png",
+      "../assets/images/products/xiaomi/miband/gggss12.jpg",
+      "../assets/images/products/xiaomi/miband/pol_pl_Smartband-Xiaomi-Smart-Mi-Band-7-Pro-White-2174_44515_2.jpg",
+      "../assets/images/products/xiaomi/miband/section-12.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "SAMSUNG E0-IC100",
+    "description": "Studio sound quality every day. High quality of emitted tones and affordable price is offered by SAMSUNG presenting headphones E0-IC100 Type-C. modern technology has made it possible to combine the affordable price of equipment with extremely precise technical solutions. Thanks to this, Samsung headphones can successfully compete with much more expensive equipment of well-known and respected manufacturers and do not look worse on their background!",
+    "price": 119,
+    "discountPercentage": 15.5,
+    "rating": 4.64,
+    "stock": 76,
+    "brand": "samsung",
+    "category": "headphones",
+    "thumbnail": "../assets/images/products/sumsung/naushniki2/samsung-sluchawki-samsung-akg-eo-ig955-bulk.jpg",
+    "images": [
+      "../assets/images/products/sumsung/naushniki2/samsung-sluchawki-samsung-akg-eo-ig955-bulk.jpg",
+      "../assets/images/products/sumsung/naushniki2/ORYGINALNE-Sluchawki-SAMSUNG-AKG-0.jpg",
+      "../assets/images/products/sumsung/naushniki2/Sluchawki-dokanalowe-SAMSUNG-E0-IC100-Bialy-sluchawki.jpg",
+      "../assets/images/products/sumsung/naushniki2/Sluchawki-dokanalowe-SAMSUNG-E0-IC100-Czarny-front.jpg",
+      "../assets/images/products/sumsung/naushniki2/Sluchawki-dokanalowe-SAMSUNG-E0-IC100-Czarny-gora.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "SAMSUNG Galaxy Tab A8",
+    "description": "A 10.5” display with symmetrical bezels of just 10.2 mm thick allows you to fully immerse yourself in the content on the screen. Discover without compromise. From epic movies to tutorials related to your hobby, the Galaxy Tab A8 takes you into the world of entertainment with a great view of everything you watch on it.",
+    "price": 415,
+    "discountPercentage": 11.5,
+    "rating": 4.77,
+    "stock": 69,
+    "brand": "samsung",
+    "category": "tablets",
+    "thumbnail": "../assets/images/products/sumsung/note/Tablet-SAMSUNG-Galaxy-Tab-A8-10.5-4-64GB-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/note/Tablet-SAMSUNG-Galaxy-Tab-A8-10.5-4-64GB-0.jpg",
+      "../assets/images/products/sumsung/note/Tablet-SAMSUNG-Galaxy-Tab-A8-10.5-4-64GB-Wi-Fi-Srebrny-przod.jpg",
+      "../assets/images/products/sumsung/note/Tablet-SAMSUNG-Galaxy-Tab-A8-10.5-4-64GB-Wi-Fi-Srebrny-tyl.jpg",
+      "../assets/images/products/sumsung/note/Tablet-SAMSUNG-Galaxy-Tab-A8-10.5-4-64GB-Wi-Fi-Srebrny-tyl2.jpg",
+      "../assets/images/products/sumsung/note/Tablet-SAMSUNG-Galaxy-Tab-A8-10.5-4-64GB-Wi-Fi-Srebrny55-tyl2.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Xiaomi Redmi Buds 4 Pro",
+    "description": "Support Hi-Res Audio Wireless. Amazing sound. Feast for your ears-the Redmi Buds 4 Pro is Hi-Res Audio Wireless certified and supports LDAC audio codec with transmission speeds up to 990kbps, as well as audio resolutions of 96kHz/24 bits and even higher.",
+    "price": 79,
+    "discountPercentage": 12,
+    "rating": 4.67,
+    "stock": 67,
+    "brand": "xiaomi",
+    "category": "headphones",
+    "thumbnail": "../assets/images/products/xiaomi/naushn/35057423-3-16643lh6440l2.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/naushn/35057423-3-16643lh6440l2.jpg",
+      "../assets/images/products/xiaomi/naushn/04ad5d38d4637330c1ed6b7e6b918575.png",
+      "../assets/images/products/xiaomi/naushn/35057423-3-1664364402.jpg",
+      "../assets/images/products/xiaomi/naushn/04ad5d38d4637330c1ed6b7e6b918575.png",
+      "../assets/images/products/xiaomi/naushn/gsmarena_002.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "SAMSUNG Galaxy Tab S7",
+    "description": "The elegant Galaxy Tab S7 FE WiFi case pleases the eyes with its classic design and handy, convenient in the handle dimensions: 284.8 x 185.0 x 6.3 mm. The camera area was minimized, nor was anything distracting your attention. Three colors to choose from: black, green, silver.",
+    "price": 315,
+    "discountPercentage": 13.5,
+    "rating": 4.73,
+    "stock": 111,
+    "brand": "samsung",
+    "category": "tablets",
+    "thumbnail": "../assets/images/products/sumsung/note2/Tablet-SAMSUNG-Galaxy-Tab-S7-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/note2/Tablet-SAMSUNG-Galaxy-Tab-S7-0.jpg",
+      "../assets/images/products/sumsung/note2/Tablet-SAMSUNG-Galaxy-Tab-S7-F2-12-4-lifestyle2-1.JPG",
+      "../assets/images/products/sumsung/note2/Tablet-SAMSUNG-Galaxy-Tab-S7-FE-12-4-lifestyle-1.JPG",
+      "../assets/images/products/sumsung/note2/Tablet-SAMSUNG-Galaxy-Tab-S7-FE-12-4-lifestyle-2.JPG",
+      "../assets/images/products/sumsung/note2/Tablet-SAMSUNG-Galaxy-Tab-S7-FE-12-4-lifestyle2-1.JPG"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "SAMSUNG QE Quantum",
+    "description": "A billion perfect colors. 100% color intensity (thanks to Quantum Dot technology). Discover colors that take your breath away. Quantum Dot technology will fill your image with a billion colors that will be perfect even at the highest brightness of the image. Experience more detail with depth of contrast and colors that are hard to take your eyes off. Take viewing to a new level with Quantum HDR.",
+    "price": 1199,
+    "discountPercentage": 8,
+    "rating": 4.87,
+    "stock": 7,
+    "brand": "samsung",
+    "category": "tv",
+    "thumbnail": "../assets/images/products/sumsung/tv/Telewizor-SAMSUNG-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/tv/Telewizor-SAMSUNG-0.jpg",
+      "../assets/images/products/sumsung/tv/Telewizor-SAMSUNG-QE65Q675425B-front.jpg",
+      "../assets/images/products/sumsung/tv/Telewizor-SAMSUNG-QE65Q67B-bok.jpg",
+      "../assets/images/products/sumsung/tv/Telewizor-SAMSUNG-QE65Q67B-kadr.jpg",
+      "../assets/images/products/sumsung/tv/wsamsung-qe65q67b-qled-tv-uhd-4k,101544520145_8.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "XIAOMI Mi Curved",
+    "description": "Immerse yourself in the exciting world of games. The wide-angle, Curved monitor Xiaomi Mi Curved BHR4269GL is a great choice for gamers who are looking for the highest quality and performance. The 34-inch UWQHD (3440×1440) screen will allow you to experience the beauty of virtual worlds on a completely different level. The curved monitor will surround you with images from the games, providing unparalleled immersion and a wide field of view, thanks to which you will see even faster threats and opportunities for victory. AMD FREESYNC Premium Sync will help you take full advantage of the high refresh rate of 144Hz to deliver smooth images and full satisfaction.",
+    "price": 559,
+    "discountPercentage": 10,
+    "rating": 4.81,
+    "stock": 27,
+    "brand": "xiaomi",
+    "category": "monitors",
+    "thumbnail": "../assets/images/products/xiaomi/monitor/Monitor-XIAOMI-Mi-Curved-BHR4269GL-przod-bok.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/monitor/Monitor-XIAOMI-Mi-Curved-BHR4269GL-przod-bok.jpg",
+      "../assets/images/products/xiaomi/monitor/BHR4269GL.4-1000x1000.jpg",
+      "../assets/images/products/xiaomi/monitor/Monitor-XIAOMI-Mi-Curved-BHR4269GL-front.jpg",
+      "../assets/images/products/xiaomi/monitor/Monitor-XIAOMI-Mi-Curved-BHR4269GL-gora.jpg",
+      "../assets/images/products/xiaomi/monitor/Monitor-XIAOMI-Mi-Curved-BHR4269GL-tyl.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Xiaomi 12 pro",
+    "description": "Beauty of every scenedeveloped as a result of the constant pursuit of excellence in creating what you desire, Xiaomi 12 Pro is now ready to dominate every scene with a professional 50 MP triple camera, a dynamic WQHD+ display with a refresh rate of 120 Hz, the most advanced Snapdragon ® 8 Gen 1 Chip and Xiaomi HyperCharge 120 W intelligent charging.",
+    "price": 749,
+    "discountPercentage": 15,
+    "rating": 4.74,
+    "stock": 47,
+    "brand": "xiaomi",
+    "category": "smartphones",
+    "thumbnail": "../assets/images/products/xiaomi/tel/xiaomi-12-pro-1658404845.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/tel/xiaomi-12-pro-1658404845.jpg",
+      "../assets/images/products/xiaomi/tel/605030.jpg",
+      "../assets/images/products/xiaomi/tel/Etui-3MK-Matt-Case-do-Xiaomi-12-Pro-Czarny-front.jpg",
+      "../assets/images/products/xiaomi/tel/product-image-3.png",
+      "../assets/images/products/xiaomi/tel/xiaomi-12-pro.png"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "SAMSUNG Galaxy Watch 5",
+    "description": "The new Galaxy Watch5 Pro combines the iconic and classic design of the Galaxy smartwatch with a fit for even the most extreme challenges. Take advantage of additional customization options by choosing from dozens of elegant or sporty discs. The Galaxy Watch5 Pro will work in any situation.",
+    "price": 525,
+    "discountPercentage": 9,
+    "rating": 4.79,
+    "stock": 87,
+    "brand": "samsung",
+    "category": "smartwatch",
+    "thumbnail": "../assets/images/products/sumsung/smart/Smartwatch-SAMSUNG-Galaxy-Watch-5-Pro-Czarny-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/smart/Smartwatch-SAMSUNG-Galaxy-Watch-5-Pro-Czarny-0.jpg",
+      "../assets/images/products/sumsung/smart/Smartwatch-SAMSUNG-Galaxy-Watch-5-Pro-Czarny-02.jpg",
+      "../assets/images/products/sumsung/smart/Smartwatch-SAMSUNG-Galaxy-Watch-5-Pro-Czarny-03.jpg",
+      "../assets/images/products/sumsung/smart/Smartwatch-SAMSUNG-Galaxy-Watch-5-Pro-Czarny-04.jpg",
+      "../assets/images/products/sumsung/smart/Smartwatch-SAMSUNG-Galaxy-Watch-5-Pro-Czarny-06.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "SAMSUNG Galaxy S22",
+    "description": "Smartphone Samsung Galaxy S22+ 8/128 GB Black. Samsung Galaxy S22+ 8/128 GB Black is a phenomenal smartphone. You'll find a more efficient and energy-efficient processor, ultra-fast charging technology, and an improved cooling system. Now you will complete your duties faster and you will be able to relax with great quality movies and games. At the same time, it is the most durable smartphone in the entire series.",
+    "price": 425,
+    "discountPercentage": 11,
+    "rating": 4.72,
+    "stock": 107,
+    "brand": "samsung",
+    "category": "smartphones",
+    "thumbnail": "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS22/Smartfon-SAMSUNG-Galaxy-S22-Fioletowy-front-tyl.jpg",
+    "images": [
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS22/Smartfon-SAMSUNG-Galaxy-S22-Fioletowy-front-tyl.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS22/Smartfon-SAMSUNG-Galaxy-S22-Plus-Rozowy-1.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS22/samsung-s22-0.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS22/samsung-s22-1.jpg",
+      "../assets/images/products/sumsung/SmartfonSAMSUNGGalaxyS22/samsung-s22-4.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "SAMSUNG Neural AI",
+    "description": "Scale to 4K with artificial intelligence. Neural AI Quantum 4K Processor. discover the pleasure of watching your favorite content in vivid colors and with clear contrasts. This will provide you with a multi-intelligent Samsung processor, using 20 neural networks. Up to 4K scaling will give you even higher quality scenes.",
+    "price": 1399,
+    "discountPercentage": 10,
+    "rating": 4.94,
+    "stock": 5,
+    "brand": "samsung",
+    "category": "tv",
+    "thumbnail": "../assets/images/products/sumsung/tv2/Telewizor-SAMSUNG-QE65S95B-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/tv2/Telewizor-SAMSUNG-QE65S95B-0.jpg",
+      "../assets/images/products/sumsung/tv2/Telewizor-SAMSUNG-QE65S95B-bok.jpg",
+      "../assets/images/products/sumsung/tv2/Telewizor-SAMSUNG-QE65S95B-gora.jpg",
+      "../assets/images/products/sumsung/tv2/Telewizor-SAMSUNG-QE65S95B-kadr.jpg",
+      "../assets/images/products/sumsung/tv2/Telewizor-SAMSUNG-QE65S95B-tyl.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Xiaomi Mi 10",
+    "description": "Impressive 108 Mpix camera. As a pioneer of smartphone cameras, the Mi 10 takes photography to a whole new level. Powered by Qualcomm Spectra ™ 480 ISP technology, AI artificial intelligence, and lossless compression, HEIF is able to take full advantage of the lens ' 108 Mpix potential. A more efficient and responsive camera system allows you to quickly take phenomenal photos in unique resolution and store them using 50% less space. In addition, use an ultra-wide lens, a macro lens, or a camera used to give depth to the photo. Record beautiful memories recording in 8K resolution.",
+    "price": 469,
+    "discountPercentage": 19,
+    "rating": 4.65,
+    "stock": 19,
+    "brand": "xiaomi",
+    "category": "smartphones",
+    "thumbnail": "../assets/images/products/xiaomi/xiaomi_mi10/642ba7cc-cb27-49efj-90a2-55a94ed752ljhj2c-min.jpg",
+    "images": [
+      "../assets/images/products/xiaomi/xiaomi_mi10/642ba7cc-cb27-49efj-90a2-55a94ed752ljhj2c-min.jpg",
+      "../assets/images/products/xiaomi/xiaomi_mi10/642ba7cc-cb27-49ef-90a2-55a94ed7522c-min.jpg",
+      "../assets/images/products/xiaomi/xiaomi_mi10/642ba7cc-cb27-49efj-90a2-55a94ed7522c-min.jpg",
+      "../assets/images/products/xiaomi/xiaomi_mi10/642ba7cc-cb27-49efj-90a2-55a94efggfgdd752ljhj2c-min.jpg",
+      "../assets/images/products/xiaomi/xiaomi_mi10/642ba7cc-cb27-49efj-90a2-64555a94efggfgdd752ljhj2c-min.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "SAMSUNG Galaxy Watch 4",
+    "description": "The New Wear OS Powered by Samsung operating system was created in cooperation with Google. As a result, you get access to the most popular applications2 (also from third parties) and can enjoy their incredibly simple operation from the wrist.",
+    "price": 355,
+    "discountPercentage": 10,
+    "rating": 4.61,
+    "stock": 45,
+    "brand": "samsung",
+    "category": "smartwatch",
+    "thumbnail": "../assets/images/products/sumsung/smart2/Smartwatch-SAMSUNG-Galaxy-Watch-4-SM-R875FZKAEUE-44mm-LTE-0.jpg",
+    "images": [
+      "../assets/images/products/sumsung/smart2/Smartwatch-SAMSUNG-Galaxy-Watch-4-SM-R875FZKAEUE-44mm-LTE-0.jpg",
+      "../assets/images/products/sumsung/smart2/Smartwatch-SAMSUNG-Galaxy-Watch-4-SM-R875FZKAEUE-44mm-LTE-Czarny-front.jpg",
+      "../assets/images/products/sumsung/smart2/Smartwatch-SAMSUNG-Galaxy-Watch-4-SM-R875FZKAEUE-44mm-LTE-Czarny-lewy-skos.jpg",
+      "../assets/images/products/sumsung/smart2/Smartwatch-SAMSUNG-Galaxy-Watch-4-SM-R875FZKAEUE-44mm-LTE-Czarny-przyciski.jpg",
+      "../assets/images/products/sumsung/smart2/Smartwatch-SAMSUNG-Galaxy-Watch-4-SM-R875FZKAEUE-44mm-LTE-Czarny-tyl.jpg"
+    ]
+  }
+]

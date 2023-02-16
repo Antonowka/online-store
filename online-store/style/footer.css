@@ -1,0 +1,89 @@
+.footer {
+  background: var(--dark-gray);
+  width: 100%;
+  max-height: 100%;
+  flex: 0 0 auto;
+}
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 20px 0;
+}
+@media (max-width: 768px) {
+  .footer__wrapper {
+    gap: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .footer__wrapper {
+    gap: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .footer__wrapper {
+    gap: 15px;
+  }
+}
+
+.footer_icon,
+.footer_icon_link {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  padding: 18px;
+}
+
+
+.icon-youtube{
+  width: 30px;
+  height: 30px;
+  background: url(../assets/icons/logo-youtube.png);
+  background-size: contain;
+}
+.icon-github{
+  width: 30px;
+  height: 30px;
+  background: url(../assets/icons/logo-github.png);
+  background-size: contain;
+}
+.icon-school{
+  width: 30px;
+  height: 30px;
+  background: url(../assets/icons/logo_rs-s.png);
+  background-size: contain;
+}
+.footer_icon:hover{
+  filter: drop-shadow(0 0 20px var(--light-gray));
+}
+
+.icon-school:hover,
+.icon-github:hover,
+.icon-youtube:hover {
+  transform: scale(1.1);
+}
+
+.icon-school:active,
+.icon-github:active,
+.icon-youtube:active {
+  transform: scale(1);
+}
+
+.copyright {
+  color: var(--fonts);
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.copyright-link {
+  font-size: 18px;
+  color: var(--gray);
+  transition: 0.2s;
+}
+
+.copyright-link:hover {
+  color: var(--light-gray);
+}

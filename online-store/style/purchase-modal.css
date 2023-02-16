@@ -1,0 +1,132 @@
+.purchase__modal {
+  max-width: 600px;
+  min-height: 650px;
+  border: 1px solid var(--gray);
+  background: var(--light-gray);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 20px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+  color: var(--fonts);
+}
+
+.purchase__title {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.purchase__card{
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#modal__input__name,
+#modal__input__phone,
+#modal__input__adress,
+#modal__input__email {
+  width: 300px;
+  min-height: 50px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.modal__card__wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: 150px;
+  border: 1px solid var(--gray);
+  background: var(--khaki);
+  border-radius: 10px;
+  gap: 10px;
+  padding: 25px 0 10px 0;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#modal__input__cardNum {
+  width: 300px;
+  height: 50px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  margin: 10px 40px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+#modal__input__card__date,
+#modal__input__card__CVV {
+  width: 100px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  padding-left: 8px;
+  font-size: 16px;
+}
+
+.btn__modal__confirm {
+  height: 50px;
+  width: 150px;
+  align-self: center;
+  margin: 0 5px 0 5px;
+  box-sizing: border-box;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  color: var(--fonts);
+  background: var(--gray);
+  cursor: pointer;
+  margin: 20px 0 10px 0;
+  transition: .2s;
+  font-size: 18px;
+}
+
+.btn__modal__confirm:hover {
+  border: 1px solid var(--dark-gray);
+  background: var(--dark-gray);
+  color: var(--light-gray);
+  transform: scale(1.05);
+}
+.btn__modal__confirm:active {
+  transform: scale(1);
+  border: 1px solid var(--gray);
+  color: var(--fonts);
+  background: var(--gray);
+}
+
+.modal__input::placeholder {
+  opacity: 0.7;
+}
+
+.modal__input{
+  border-color: color var(--khaki);
+}
+
+.modal__input:focus {
+  box-sizing: border-box;
+  outline-color: var(--khaki);
+}
+
+.modal__input:focus {
+  box-sizing: border-box;
+  outline-color: var(--khaki-dark);
+  font-size: 18px;
+  color: var(--khaki-dark);
+}
+
+.modal__error{
+  color: var(--error);
+}
