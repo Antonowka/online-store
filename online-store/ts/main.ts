@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prefer-const */
 // CREATE products item from products.js
 import updateHeader from './updateCart';
@@ -104,13 +103,14 @@ function createProducts() {
 
       // SORTING
       (sorting as HTMLSelectElement).addEventListener('change', (event: Event) => {
-        let [sortBy, sortByDirection] = (event.target as HTMLSelectElement).value.split('-');
+        const [sortBy, sortByDirection] = (event.target as HTMLSelectElement).value.split('-');
 
-        let sortFn: any =
-          ((sortFnByField as unknown) as string)[(sortBy as unknown) as number] ?? sortFnByField.default;
-        let dir = sortByDirection === 'asc' ? 1 : -1;
+        const sortFn: ((a: string, b: string, dir: number) => number) | undefined =
+          ((sortFnByField as unknown) as { [key: string]: (a: string, b: string, dir: number) => number })[sortBy] ??
+          sortFnByField.default;
+        const dir: number = sortByDirection === 'asc' ? 1 : -1;
 
-        let ary = filteredProducts.sort((a, b) => {
+        const ary = filteredProducts.sort((a, b) => {
           return sortFn(
             ((a as unknown) as string)[(sortBy as unknown) as number],
             ((b as unknown) as string)[(sortBy as unknown) as number],
@@ -132,10 +132,6 @@ function createProducts() {
         renderProducts((ary as unknown) as Array<IProduct>);
       });
 
-      type IFilter = {
-        filter: number;
-      };
-
       // filter
       const checkboxes = document.querySelectorAll('.filter-input');
       checkboxes.forEach((checkbox) => {
@@ -143,16 +139,16 @@ function createProducts() {
           const checked = Array.from(checkboxes).filter((checkbox) => (checkbox as HTMLInputElement).checked);
 
           if (!checked.length) return renderProducts((productsRaw as unknown) as Array<IProduct>);
-          const filters = checked.reduce((acc, curr) => {
-            let newArray = acc[((((curr as unknown) as HTMLInputElement).dataset as unknown) as IFilter).filter];
+          const filters = checked.reduce((acc: { [key: string]: string[] }, curr) => {
+            let newArray = acc[String(((curr as HTMLElement).dataset as DOMStringMap).filter)];
 
             if (!newArray) {
               newArray = [];
             }
 
-            newArray.push(curr).value;
+            newArray.push((curr as HTMLInputElement).value);
             return acc;
-          }, {} as Array<any>);
+          }, {});
 
           const ary: HTMLElement[] = productsRaw.filter((product) => {
             return Object.keys(filters).every((filter) => {
